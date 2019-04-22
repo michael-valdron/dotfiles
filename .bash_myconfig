@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set Private variables
-if [ -f ~/.bash_myconfig ]; then
+if [ -f ~/.bash_private ]; then
     . ~/.bash_private
 fi
 
