@@ -32,10 +32,10 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (neotree dracula-theme github-theme auctex ac-math pyvenv git hy-mode jedi company-jedi ipython-shell-send flycheck-clojure flycheck-pycheckers flymake-python-pyflakes company-anaconda company-shell anaconda-mode template-overlays omnisharp csharp-mode
-             (quote company)
-             (quote company-mode)
-             ac-cider cider-eval-sexp-fu gradle-mode jdee lsp-java eclim javadoc-lookup java-snippets java-imports javaimp javap-mode company ensime sbt-mode markdown-toc markdown-mode+ markdown-mode company-go go-fill-struct go-scratch go-errcheck go-tag go-stacktracer go-snippets go-imenu go-playground-cli go-impl go-autocomplete go-complete go-gopath go-projectile go-playground go-imports golint go-mode clojars cider-hydra cider cython-mode ## clojure-mode scala-mode auto-complete-clang auto-complete-c-headers)))
+    (markdown-preview-mode neotree dracula-theme github-theme auctex ac-math pyvenv git hy-mode jedi company-jedi ipython-shell-send flycheck-clojure flycheck-pycheckers flymake-python-pyflakes company-anaconda company-shell anaconda-mode template-overlays omnisharp csharp-mode
+                           (quote company)
+                           (quote company-mode)
+                           ac-cider cider-eval-sexp-fu gradle-mode lsp-java eclim javadoc-lookup java-snippets java-imports javaimp javap-mode company sbt-mode markdown-toc markdown-mode+ markdown-mode company-go go-fill-struct go-scratch go-errcheck go-tag go-stacktracer go-snippets go-imenu go-playground-cli go-impl go-autocomplete go-complete go-gopath go-projectile go-playground go-imports golint go-mode clojars cider-hydra cider cython-mode ## clojure-mode scala-mode auto-complete-clang auto-complete-c-headers)))
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(tab-width 4)
  '(vc-annotate-background "#b0cde7")
@@ -76,8 +76,8 @@
 (defun install-plugins ()
   (interactive)
   (let* ((packages '(company ac-cider auto-complete cider-eval-sexp-fu gradle-mode
-                             jdee lsp-java eclim javadoc-lookup java-snippets
-                             java-imports javaimp javap-mode company ensime
+                             lsp-java eclim javadoc-lookup java-snippets
+                             java-imports javaimp javap-mode company
                              sbt-mode markdown-toc markdown-mode+ markdown-mode
                              pyvenv anaconda-mode company-go go-fill-struct go-scratch
                              go-errcheck go-tag go-stacktracer go-snippets
@@ -86,7 +86,8 @@
                              go-imports golint go-mode clojars cider-hydra
                              cider cython-mode clojure-mode scala-mode
                              auto-complete-clang auto-complete-c-headers
-                             csharp-mode omnisharp))
+                             csharp-mode omnisharp neotree dracula-theme github-theme
+                             pyenv))
          (packages-new))
     (package-refresh-contents)
     (dolist (p packages packages-new)
@@ -133,6 +134,10 @@
 (global-set-key [?\C-x ?\M-x] 'company-complete)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-x /") 'comment-or-uncomment-region)
+
+;; Fix for end key not working correctly in xterm
+(global-set-key (kbd "<select>") 'end-of-line)
+
 (provide 'init)
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)

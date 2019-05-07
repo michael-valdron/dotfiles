@@ -1,5 +1,9 @@
 # aliases
 
+## tmux ##
+# if tmux colour is not working..
+# alias tmux='tmux -2'
+
 ## rclone ##
 # GDrive
 alias gdrive-mount='rclone mount gdrive:/ "${HOME}/GDrives/Google Drive Stream/" &'
@@ -38,10 +42,10 @@ alias od-dev-stop='gcloud compute instances stop $OD_DEV_HOST --zone=us-central1
 
 ## Anaconda ##
 # envs
-alias conda='~/anaconda3/bin/conda'
-alias source='~/anaconda3/bin/source'
-alias activate='~/anaconda3/bin/activate'
-alias deactivate='~/anaconda3/bin/deactivate'
+# alias conda='~/anaconda3/bin/conda'
+# alias source='~/anaconda3/bin/source'
+# alias activate='~/anaconda3/bin/activate'
+# alias deactivate='~/anaconda3/bin/deactivate'
 
 ## Clojure ##
 alias clj='clojure'
