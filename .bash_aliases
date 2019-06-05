@@ -32,7 +32,8 @@ alias home-vpn-disconnect='sudo killall openvpn'
 alias ssh-nas='ssh home-nas'
 
 # dbsci
-alias ssh-dbsci='ssh dbsci'
+alias ssh-dbsci-sat='ssh dbsci-sat'
+alias ssh-dbsci-twitter='ssh dbsci-twitter'
 
 # GCP
 alias gce='gcloud compute'
