@@ -29,7 +29,7 @@ alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --tra
 
 ## SSH ##
 # Home NAS
-# alias ssh-nas='ssh home-nas'
+alias ssh-nas='ssh home-nas'
 
 # dbsci
 alias ssh-dbsci-sat='ssh dbsci-sat'
