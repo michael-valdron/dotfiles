@@ -55,7 +55,8 @@ alias sshfs-nas='sshfs-nas-home && sshfs-nas-apps && sshfs-nas-videos && sshfs-n
 alias um-nas-home='fusermount3 -u /mnt/mvaldron/home_nas/home'
 alias um-nas-apps='fusermount3 -u /mnt/mvaldron/home_nas/software'
 alias um-nas-videos='fusermount3 -u /mnt/mvaldron/home_nas/videos'
-alias um-nas='um-nas-home && um-nas-apps && um-nas-videos'
+alias um-nas-shares='fusermount3 -u /mnt/mvaldron/home_nas/shares'
+alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 
 ## Anaconda ##
 # envs
