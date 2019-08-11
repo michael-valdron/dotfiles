@@ -24,21 +24,21 @@ alias odrive-push='rclone sync "${PWD}" "onedrive:${1}" -v -u --checkers 1 --tra
 alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --transfers 1'
 
 ## VPN ##
-alias home-vpn-connect='sudo openvpn --config ~/client.ovpn --daemon'
-alias home-vpn-disconnect='sudo killall openvpn'
+# alias home-vpn-connect='sudo openvpn --config ~/client.ovpn --daemon'
+# alias home-vpn-disconnect='sudo killall openvpn'
 
 ## SSH ##
 # Home NAS
-alias ssh-nas='ssh home-nas'
+# alias ssh-nas='ssh home-nas'
 
 # dbsci
-alias ssh-dbsci='ssh dbsci'
+# alias ssh-dbsci='ssh dbsci'
 
 # GCP
 alias gce='gcloud compute'
-alias od-dev-start='gcloud compute instances start $OD_DEV_HOST --zone=us-central1-c'
-alias od-dev-ssh='gcloud compute ssh $OD_DEV_USER@$OD_DEV_HOST --zone=us-central1-c'
-alias od-dev-stop='gcloud compute instances stop $OD_DEV_HOST --zone=us-central1-c'
+# alias od-dev-start='gcloud compute instances start $OD_DEV_HOST --zone=us-central1-c'
+# alias od-dev-ssh='gcloud compute ssh $OD_DEV_USER@$OD_DEV_HOST --zone=us-central1-c'
+# alias od-dev-stop='gcloud compute instances stop $OD_DEV_HOST --zone=us-central1-c'
 
 ## Anaconda ##
 # envs
