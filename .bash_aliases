@@ -48,7 +48,8 @@ alias od-dev-stop='gcloud compute instances stop $OD_DEV_HOST --zone=us-central1
 alias sshfs-nas-home='sshfs home-nas:/data/home/mvaldron /mnt/mvaldron/home_nas/home'
 alias sshfs-nas-apps='sshfs home-nas:/data/software /mnt/mvaldron/home_nas/software'
 alias sshfs-nas-videos='sshfs home-nas:/data/videos /mnt/mvaldron/home_nas/videos'
-alias sshfs-nas='sshfs-nas-home && sshfs-nas-apps && sshfs-nas-videos'
+alias sshfs-nas-shares='sshfs home-nas:/data/shares /mnt/mvaldron/home_nas/shares'
+alias sshfs-nas='sshfs-nas-home && sshfs-nas-apps && sshfs-nas-videos && sshfs-nas-shares'
 
 ## Unmount
 alias um-nas-home='fusermount3 -u /mnt/mvaldron/home_nas/home'
