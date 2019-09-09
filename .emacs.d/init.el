@@ -2,6 +2,22 @@
 ;;; Commentary:
 ;;; code:
 (require 'package)
+
+;; List of packages
+(defvar my-packages
+  '(company ac-cider auto-complete cider-eval-sexp-fu gradle-mode
+            lsp-java eclim javadoc-lookup java-snippets
+            java-imports javaimp javap-mode company
+            sbt-mode markdown-toc markdown-mode+ markdown-mode
+            company-go go-fill-struct go-scratch elpy
+            go-errcheck go-tag go-stacktracer go-snippets
+            go-imenu go-playground-cli go-impl go-autocomplete
+            go-complete go-gopath go-projectile go-playground
+            go-imports golint go-mode clojars cider-hydra
+            cider cython-mode clojure-mode scala-mode
+            auto-complete-clang auto-complete-c-headers
+            csharp-mode omnisharp neotree dracula-theme github-theme))
+
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
@@ -75,19 +91,7 @@
 
 (defun install-plugins ()
   (interactive)
-  (let* ((packages '(company ac-cider auto-complete cider-eval-sexp-fu gradle-mode
-                             lsp-java eclim javadoc-lookup java-snippets
-                             java-imports javaimp javap-mode company
-                             sbt-mode markdown-toc markdown-mode+ markdown-mode
-                             pyvenv anaconda-mode company-go go-fill-struct go-scratch
-                             go-errcheck go-tag go-stacktracer go-snippets
-                             go-imenu go-playground-cli go-impl go-autocomplete
-                             go-complete go-gopath go-projectile go-playground
-                             go-imports golint go-mode clojars cider-hydra
-                             cider cython-mode clojure-mode scala-mode
-                             auto-complete-clang auto-complete-c-headers
-                             csharp-mode omnisharp neotree dracula-theme github-theme
-                             pyenv))
+  (let* ((packages my-packages)
          (packages-new))
     (package-refresh-contents)
     (dolist (p packages packages-new)
@@ -98,18 +102,8 @@
   'company
   '(add-to-list 'company-backends #'company-omnisharp))
 
-(defun enable-python-env (env)
-  "ARGS: ENV."
-  (interactive "senv: ")
-  (pyvenv-mode 1)
-  (pyvenv-activate (concat "~/.conda/envs/" env "/"))
-  (jedi:ac-setup))
-
-(defun disable-python-env ()
-  "Disable current python env."
-  (interactive)
-  (pyvenv-deactivate)
-  (pyvenv-mode 0))
+;; Loads python config from python_config.el
+(load "~/.emacs.d/python_config.el")
 
 (defun cs-mode-setup ()
   (omnisharp-mode)
@@ -131,6 +125,7 @@
 
 (global-company-mode t)
 (global-flycheck-mode t)
+(global-linum-mode t)
 (global-set-key [?\C-x ?\M-x] 'company-complete)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "C-x /") 'comment-or-uncomment-region)
