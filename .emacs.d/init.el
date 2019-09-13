@@ -9,7 +9,8 @@
             lsp-java eclim javadoc-lookup java-snippets
             java-imports javaimp javap-mode company
             sbt-mode markdown-toc markdown-mode+ markdown-mode
-            company-go go-fill-struct go-scratch elpy
+            company-go go-fill-struct go-scratch anaconda-mode
+            pyvenv python-mode elpy
             go-errcheck go-tag go-stacktracer go-snippets
             go-imenu go-playground-cli go-impl go-autocomplete
             go-complete go-gopath go-projectile go-playground
@@ -48,10 +49,10 @@
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
  '(package-selected-packages
    (quote
-    (virtualenv edn pyenv-mode markdown-preview-mode neotree dracula-theme github-theme auctex ac-math pyvenv git hy-mode jedi company-jedi ipython-shell-send flycheck-clojure flycheck-pycheckers flymake-python-pyflakes company-anaconda company-shell anaconda-mode template-overlays omnisharp csharp-mode
-                (quote company)
-                (quote company-mode)
-                ac-cider cider-eval-sexp-fu gradle-mode lsp-java eclim javadoc-lookup java-snippets java-imports javaimp javap-mode company sbt-mode markdown-toc markdown-mode+ markdown-mode company-go go-fill-struct go-scratch go-errcheck go-tag go-stacktracer go-snippets go-imenu go-playground-cli go-impl go-autocomplete go-complete go-gopath go-projectile go-playground go-imports golint go-mode clojars cider-hydra cider cython-mode ## clojure-mode scala-mode auto-complete-clang auto-complete-c-headers)))
+    (python-mode company-go jedi-direx jedi flycheck-pyflakes elpy auto-complete virtualenv edn pyenv-mode markdown-preview-mode neotree dracula-theme github-theme auctex ac-math pyvenv git hy-mode ipython-shell-send flycheck-clojure flycheck-pycheckers flymake-python-pyflakes company-anaconda company-shell anaconda-mode template-overlays omnisharp csharp-mode
+                 (quote company)
+                 (quote company-mode)
+                 ac-cider cider-eval-sexp-fu gradle-mode lsp-java eclim javadoc-lookup java-snippets java-imports javaimp javap-mode company sbt-mode markdown-toc markdown-mode+ markdown-mode go-fill-struct go-scratch go-errcheck go-tag go-stacktracer go-snippets go-imenu go-playground-cli go-impl go-autocomplete go-complete go-gopath go-projectile go-playground go-imports golint go-mode clojars cider-hydra cider cython-mode ## clojure-mode scala-mode auto-complete-clang auto-complete-c-headers)))
  '(pdf-view-midnight-colors (quote ("#969896" . "#f8eec7")))
  '(tab-width 4)
  '(vc-annotate-background "#b0cde7")

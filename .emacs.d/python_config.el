@@ -5,8 +5,10 @@
 (defun enable-python-env (env)
   "ARGS: ENV."
   (interactive "senv: ")
-  (setenv "WORKON_HOME" (expand-file-name (concat "~/.conda/envs/" env "/")))
-  (pyvenv-mode 1))
+  (pyvenv-mode 1)
+  (pyvenv-activate (expand-file-name (concat "~/anaconda3/envs/"
+                                             env "/")))
+  (jedi:ac-setup))
 ;; (elpy-use-ipython) => is deprecated
 
 (defun disable-python-env ()
