@@ -35,6 +35,9 @@ alias ssh-nas='ssh home-nas'
 alias ssh-dbsci-sat='ssh dbsci-sat'
 alias ssh-dbsci-twitter='ssh dbsci-twitter'
 
+# rtrsci
+alias ssh-rtrsci-dev='ssh rtrsci-dev'
+
 # GCP
 alias gce='gcloud compute'
 # alias od-dev-start='gcloud compute instances start $OD_DEV_HOST --zone=us-central1-c'
