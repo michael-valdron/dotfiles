@@ -4,6 +4,10 @@
 # if tmux colour is not working..
 # alias tmux='tmux -2'
 
+## openssl ##
+alias encrypt='bash ~/.scripts/enc.sh'
+alias decrypt='bash ~/.scripts/dec.sh'
+
 ## rclone ##
 # GDrive
 alias gdrive-mount='rclone mount gdrive:/ "${HOME}/GDrives/Google Drive Stream/" &'
