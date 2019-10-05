@@ -307,9 +307,12 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; Fixes Docker issue
-  (if-let ((docker-fix (getenv "DOCKER_FIX")))
-      (if (eq docker-fix "1")
-          (setq package-check-signature nil)))
+  (setq package-check-signature
+	(if-let ((docker-fix (getenv "DOCKER_FIX")))
+		(if (string= docker-fix "1")
+		    nil
+		  t)
+		t))
   )
 
 (defun dotspacemacs/user-config ()
