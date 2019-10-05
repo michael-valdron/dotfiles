@@ -306,6 +306,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; Fixes Docker issue
+  (if-let ((docker-fix (getenv "DOCKER_FIX")))
+      (if (eq docker-fix "1")
+          (setq package-check-signature nil)))
   )
 
 (defun dotspacemacs/user-config ()
