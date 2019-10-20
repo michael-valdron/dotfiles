@@ -1,7 +1,6 @@
 #!/bin/bash
 # helper values
 TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
-IP_ADDR=$(ip addr show bond0 | grep 'inet ' | cut -d: -f2 | awk '{print $2}' | grep -Po "(.+)(?=/24)")
 
 # aliases
 
