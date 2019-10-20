@@ -103,5 +103,6 @@ if [ -f "${HOME}/.bash_servconfig" ]; then
 -v $PLEX_TRANS_PATH:/transcode \
 -v $PLEX_MEDIA_PATH:/data \
 plexinc/pms-docker"
+    alias plex-start="docker start plex-server"
+    alias plex-stop="docker stop plex-server"
 fi
-
