@@ -71,10 +71,9 @@ alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 
 ## Anaconda ##
 # envs
-alias conda='~/anaconda3/bin/conda'
-alias source='~/anaconda3/bin/source'
-alias activate='~/anaconda3/bin/activate'
-alias deactivate='~/anaconda3/bin/deactivate'
+#alias conda='~/anaconda3/bin/conda'
+#alias activate='~/anaconda3/bin/activate'
+#alias deactivate='~/anaconda3/bin/deactivate'
 
 ## Clojure ##
 alias clj='clojure'
