@@ -28,7 +28,7 @@ else
 fi
 
 # Get Logo and System Info on load
-screenfetch -E
+# screenfetch -E
 
 # Exports
 export PATH="$HOME/bin:$PATH"
