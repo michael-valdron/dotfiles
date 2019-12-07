@@ -34,15 +34,15 @@ fi
 
 
 # Personal prompt config
-if [ $TERM = 'xterm-256color' ];
+if [[ $TERM =~ '^.*-256color$' ]];
 then
     PROMPT='%B%F{39}%3~ %f%b %B%F{134}[%@]%b%f'
     PROMPT+='$(show_bat)'
     PROMPT+=$'\n''%B%F{40}$%f%b%B%F{76}>%f%b '
 else
-    PROMPT='%~ [%@ ]'
+    PROMPT='%~ [%@]'
     PROMPT+='$(show_bat)'
-    PROMPT+=$'\n''%$> '
+    PROMPT+=$'\n''$> '
 fi
 
 # Get Logo and System Info on load
