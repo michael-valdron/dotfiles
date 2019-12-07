@@ -76,7 +76,7 @@ alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 #alias deactivate='~/anaconda3/bin/deactivate'
 
 ## Clojure ##
-alias clj='clojure'
+# alias clj='clojure'
 
 ## Docker ##
 if [ -f "${HOME}/.bash_servconfig" ]; then
