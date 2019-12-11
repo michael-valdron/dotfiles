@@ -10,13 +10,13 @@ BAT_PERCENTAGE=$BAT'/capacity'
 # Battery percentage function for prompt
 function show_bat() {
     if [[ -d "${BAT}" && \
-          ! $(cat $BAT_STATUS) = 'Charging' ]];
+          $(cat $BAT_STATUS) = 'Discharging' ]];
     then
         if [ $TERM = 'xterm-256color' ];
         then
-            echo " %B%F{134}($(cat $BAT_PERCENTAGE)%%)%b%f"
+            echo " %B%F{6}$(cat $BAT_PERCENTAGE)%%%b%f"
         else
-            echo " ($(cat $BAT_PERCENTAGE)%%)"
+            echo " $(cat $BAT_PERCENTAGE)%%"
         fi
     fi
 }
@@ -36,11 +36,11 @@ fi
 # Personal prompt config
 if [[ $TERM =~ '^.*-256color$' ]];
 then
-    PROMPT='%B%F{39}%3~ %f%b %B%F{134}[%@]%b%f'
+    PROMPT='%B%F{39}%3~ %f%b %B%F{134}%@%b%f'
     PROMPT+='$(show_bat)'
     PROMPT+=$'\n''%B%F{40}$%f%b%B%F{76}>%f%b '
 else
-    PROMPT='%~ [%@]'
+    PROMPT='%~ %@'
     PROMPT+='$(show_bat)'
     PROMPT+=$'\n''$> '
 fi
