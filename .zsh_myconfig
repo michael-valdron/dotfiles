@@ -53,6 +53,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export GOPATH="$HOME/go"
+export ORTOOLS_LIB="$HOME/.local/lib/ortools"
 
 # Key Fixes
 # Referenced from: https://wiki.archlinux.org/index.php/Zsh#Key_bindings
