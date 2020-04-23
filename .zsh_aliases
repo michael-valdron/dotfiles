@@ -3,6 +3,11 @@
 TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 
 # aliases
+## Server aliases ##
+if [ -f "${HOME}/.zsh_server_aliases" ];
+then
+	. $HOME/.zsh_server_aliases
+fi
 
 ## tmux ##
 # if tmux colour is not working..
