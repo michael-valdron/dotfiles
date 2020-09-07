@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# helper values
-TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 
 # aliases
 ## Server aliases ##
