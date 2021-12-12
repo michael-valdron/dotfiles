@@ -25,8 +25,9 @@ dnf config-manager \
 dnf -y update
 
 # Install packages
-dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go clojure code docker-ce docker-ce-cli containerd.io chromium firefox flatpak \
-    keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization
+dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go java-11-openjdk clojure code docker-ce docker-ce-cli containerd.io chromium \
+    firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization \
+    unzip wget
 
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -47,6 +48,16 @@ mkdir -p /opt/zotero
 curl -L "https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=5.0.96.3" -o /tmp/zotero.tar.bz2
 tar -xf /tmp/zotero.tar.bz2 -C /opt/zotero
 ln -s /opt/zotero/zotero.desktop /usr/local/share/applications/zotero.desktop
+
+# Install Gradle
+curl -L "https://downloads.gradle-dn.com/distributions/gradle-7.0-bin.zip" -o /tmp/gradle.zip
+unzip /tmp/gradle.zip /opt/gradle
+ln -s /opt/gradle/bin/gradle /usr/bin/gradle
+
+# Install Leiningen
+curl -L "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" -o /usr/local/bin/lein
+chmod +x /usr/local/bin/lein
+ln -s /usr/local/bin/lein /usr/bin/lein
 
 # Add flatpak remotes
 flatpak remote-add --if-not-exists flathub "https://flathub.org/repo/flathub.flatpakrepo"
