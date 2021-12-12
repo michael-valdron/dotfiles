@@ -53,6 +53,8 @@ ln -s /opt/zotero/zotero.desktop /usr/local/share/applications/zotero.desktop
 mkdir -p /opt/gradle
 curl -L "https://downloads.gradle-dn.com/distributions/gradle-7.0-bin.zip" -o /tmp/gradle.zip
 unzip /tmp/gradle.zip -d /opt/gradle
+mv /opt/gradle/gradle-7.0/* /opt/gradle
+rm -rf /opt/gradle/gradle-7.0
 ln -s /opt/gradle/bin/gradle /usr/bin/gradle
 
 # Install Leiningen
