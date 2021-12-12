@@ -27,7 +27,7 @@ dnf -y update
 # Install packages
 dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go java-11-openjdk clojure code docker-ce docker-ce-cli containerd.io chromium \
     firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization \
-    unzip wget
+    unzip wget libappindicator redhat-lsb-core
 
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
