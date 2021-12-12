@@ -50,6 +50,7 @@ tar -xf /tmp/zotero.tar.bz2 -C /opt/zotero
 ln -s /opt/zotero/zotero.desktop /usr/local/share/applications/zotero.desktop
 
 # Install Gradle
+mkdir -p /opt/gradle
 curl -L "https://downloads.gradle-dn.com/distributions/gradle-7.0-bin.zip" -o /tmp/gradle.zip
 unzip /tmp/gradle.zip /opt/gradle
 ln -s /opt/gradle/bin/gradle /usr/bin/gradle
