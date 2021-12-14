@@ -21,18 +21,44 @@ dnf config-manager \
     --add-repo \
     "https://download.docker.com/linux/fedora/docker-ce.repo"
 
+# Add GCP SDK repository
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+
 # Update packages
 dnf -y update
 
 # Install packages
 dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go java-11-openjdk clojure code docker-ce docker-ce-cli containerd.io chromium \
     firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization \
-    unzip wget libappindicator redhat-lsb-core
+    unzip wget libappindicator redhat-lsb-core google-cloud-sdk bridge-utils
 
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+# Install Minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm -o /tmp/minikube-latest.x86_64.rpm
+rpm -Uvh /tmp/minikube-latest.x86_64.rpm
+
+# Install odo
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/odo/latest/odo-linux-amd64 -o /usr/local/bin/odo
+chmod +x /usr/local/bin/odo
+
+# Install Waterfox
+curl -L "https://github.com/WaterfoxCo/Waterfox/releases/download/G4.0.4/waterfox-G4.0.4.en-US.linux-x86_64.tar.bz2" -o /tmp/waterfox.tar.bz2
+tar -xf /tmp/waterfox.tar.bz2
+mv /tmp/waterfox /opt/waterfox
+ln -s /opt/waterfox/waterfox /usr/bin/waterfox
 
 # Install Mailspring
 curl -L "https://updates.getmailspring.com/download?platform=linuxRpm" -o /tmp/mailspring.rpm
@@ -78,3 +104,5 @@ flatpak install -y flathub fr.handbrake.ghb
 flatpak install -y flathub com.skype.Client
 ## Install AnyDesk
 flatpak install -y flathub com.anydesk.Anydesk
+## Install Telegram
+flatpak install -y flathub org.telegram.desktop
