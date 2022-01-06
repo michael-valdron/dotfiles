@@ -3,5 +3,6 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.colorTheme": "Monokai",
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "editor.fontSize": 15
 }
