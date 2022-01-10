@@ -15,7 +15,7 @@ sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.micros
 dnf -y install dnf-plugins-core
 dnf config-manager \
     --add-repo \
-    "https://download.docker.com/linux/rhel/docker-ce.repo"
+    "https://download.docker.com/linux/centos/docker-ce.repo"
 
 # Update packages
 dnf -y update
