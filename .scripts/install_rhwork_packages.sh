@@ -26,9 +26,9 @@ dnf config-manager \
 dnf -y update
 
 # Install packages
-dnf -y install neofetch cmatrix tmux htop zsh gcc gcc-c++ curl make cmake go java-11-openjdk code docker-ce docker-ce-cli containerd.io chromium \
-    firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese \
-    unzip wget libappindicator redhat-lsb-core bridge-utils openssl virt-manager
+dnf -y install neofetch tmux htop zsh gcc gcc-c++ curl make cmake go java-11-openjdk code docker-ce docker-ce-cli containerd.io chromium \
+    firefox flatpak keepassxc barrier gimp xournalpp clamav vlc p7zip p7zip-plugins cheese \
+    unzip wget libappindicator-gtk3 redhat-lsb-core bridge-utils openssl virt-manager
 
 # Install package groups
 dnf -y groupinstall "Virtualization Host"
