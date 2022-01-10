@@ -7,6 +7,11 @@ then
     exit 1
 fi
 
+# Install open fusion repos from Fedora
+dnf -y install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm"
+dnf -y install "https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm"
+dnf -y install "https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm"
+
 # Add Visual Studio Code repository
 rpm --import "https://packages.microsoft.com/keys/microsoft.asc"
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -23,7 +28,7 @@ dnf -y update
 # Install packages
 dnf -y install neofetch cmatrix tmux htop zsh gcc gcc-c++ curl make cmake go java-11-openjdk code docker-ce docker-ce-cli containerd.io chromium \
     firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese \
-    unzip wget libappindicator redhat-lsb-core bridge-utils openssl
+    unzip wget libappindicator redhat-lsb-core bridge-utils openssl virt-manager
 
 # Install package groups
 dnf -y groupinstall "Virtualization Host"
