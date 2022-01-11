@@ -51,10 +51,6 @@ rpm -Uvh /tmp/minikube-latest.x86_64.rpm
 curl -L "https://mirror.openshift.com/pub/openshift-v4/clients/odo/latest/odo-linux-amd64" -o /usr/local/bin/odo
 chmod +x /usr/local/bin/odo
 
-# Install Mailspring
-curl -L "https://updates.getmailspring.com/download?platform=linuxRpm" -o /tmp/mailspring.rpm
-rpm -i --quiet /tmp/mailspring.rpm
-
 # Install Etcher
 mkdir -p /opt/balena-etcher
 curl -L "https://github.com/balena-io/etcher/releases/download/v1.7.3/balena-etcher-electron-1.7.3.x86_64.rpm" -o /tmp/balena-etcher.rpm
@@ -84,3 +80,5 @@ flatpak remote-add --if-not-exists flathub "https://flathub.org/repo/flathub.fla
 flatpak install -y flathub com.getpostman.Postman
 ## Install Skype
 flatpak install -y flathub com.skype.Client
+## Install Mailspring
+flatpak install -y flathub com.getmailspring.Mailspring
