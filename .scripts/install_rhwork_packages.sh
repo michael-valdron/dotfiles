@@ -56,13 +56,6 @@ mkdir -p /opt/balena-etcher
 curl -L "https://github.com/balena-io/etcher/releases/download/v1.7.3/balena-etcher-electron-1.7.3.x86_64.rpm" -o /tmp/balena-etcher.rpm
 rpm -i --quiet /tmp/balena-etcher.rpm
 
-# Install Zotero
-mkdir -p /opt/zotero
-curl -L "https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=5.0.96.3" -o /tmp/zotero.tar.bz2
-tar -xf /tmp/zotero.tar.bz2 -C /tmp
-mv /tmp/Zotero_linux-x86_64 /opt/zotero
-ln -s /opt/zotero/zotero.desktop /usr/local/share/applications/zotero.desktop
-
 # Install Gradle
 mkdir -p /opt/gradle
 curl -L "https://downloads.gradle-dn.com/distributions/gradle-7.0-bin.zip" -o /tmp/gradle.zip
