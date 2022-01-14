@@ -1,4 +1,4 @@
-# .cshrc
+# .profile
 
 ## Alias
 ## Podman ##
