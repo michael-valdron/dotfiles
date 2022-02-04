@@ -15,12 +15,6 @@ dnf -y install "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree
 rpm --import "https://packages.microsoft.com/keys/microsoft.asc"
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-# Add Docker repository
-dnf -y install dnf-plugins-core
-dnf config-manager \
-    --add-repo \
-    "https://download.docker.com/linux/fedora/docker-ce.repo"
-
 # Add GCP SDK repository
 sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-sdk]
@@ -37,14 +31,9 @@ EOM
 dnf -y update
 
 # Install packages
-dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go java-11-openjdk clojure code docker-ce docker-ce-cli containerd.io chromium \
-    firefox flatpak keepassxc barrier gimp libreoffice calibre xournal clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization \
+dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go java-11-openjdk clojure code chromium podman podman-docker podman-compose \
+    firefox flatpak keepassxc gimp libreoffice calibre xournalpp clamav clamtk vlc sqlitebrowser p7zip p7zip-gui p7zip-plugins cheese @virtualization \
     unzip wget libappindicator redhat-lsb-core google-cloud-sdk bridge-utils openssl
-
-# Install Docker Compose
-curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # Install Minikube
 curl -L "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm" -o /tmp/minikube-latest.x86_64.rpm
