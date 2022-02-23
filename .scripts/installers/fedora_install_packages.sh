@@ -41,10 +41,22 @@ dnf -y install neofetch cmatrix tmux htop ufw zsh gcc gcc-c++ curl make cmake go
 # Install Minikube
 curl -L "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm" -o /tmp/minikube-latest.x86_64.rpm
 rpm -Uvh /tmp/minikube-latest.x86_64.rpm
+MINIKUBE_PATH=$(which minikube)
+if [ -z "${MINIKUBE_PATH}" ]
+then
+    echo "Minikube was not installed correctly."
+    exit 201
+fi
 
 # Install odo
 curl -L "https://mirror.openshift.com/pub/openshift-v4/clients/odo/latest/odo-linux-amd64" -o /usr/local/bin/odo
 chmod +x /usr/local/bin/odo
+ODO_PATH=$(which odo)
+if [ -z "${ODO_PATH}" ]
+then
+    echo "odo was not installed correctly."
+    exit 202
+fi
 
 # Install Waterfox
 curl -L "https://github.com/WaterfoxCo/Waterfox/releases/download/${WATERFOX_VERSION}/waterfox-${WATERFOX_VERSION}.en-US.linux-x86_64.tar.bz2" -o /tmp/waterfox.tar.bz2
@@ -52,16 +64,34 @@ tar -xf /tmp/waterfox.tar.bz2 -C /tmp
 mv /tmp/waterfox /opt/waterfox
 chmod +x /opt/waterfox/waterfox
 ln -s /opt/waterfox/waterfox /usr/bin/waterfox
+WATERFOX_PATH=$(which waterfox)
+if [ -z "${WATERFOX_PATH}" ]
+then
+    echo "Waterfox was not installed correctly."
+    exit 203
+fi
 
 # Install Mailspring
 curl -L "https://updates.getmailspring.com/download?platform=linuxRpm" -o /tmp/mailspring.rpm
 rpm -i --quiet /tmp/mailspring.rpm
+MAILSPRING_PATH=$(which mailspring)
+if [ -z "${MAILSPRING_PATH}" ]
+then
+    echo "Mailspring was not installed correctly."
+    exit 204
+fi
 
 # Install Etcher
 mkdir -p /opt/balena-etcher
 curl -L "https://github.com/balena-io/etcher/releases/download/v1.7.1/balenaEtcher-1.7.1-x64.AppImage" -o /opt/balena-etcher/balena-etcher.AppImage
 chmod +x /opt/balena-etcher/balena-etcher.AppImage
 ln -s /opt/balena-etcher/balena-etcher.AppImage /usr/bin/etcher
+ETCHER_PATH=$(which etcher)
+if [ -z "${ETCHER_PATH}" ]
+then
+    echo "Etcher was not installed correctly."
+    exit 205
+fi
 
 # Install Zotero
 mkdir -p /opt/zotero
@@ -69,6 +99,12 @@ curl -L "https://www.zotero.org/download/client/dl?channel=release&platform=linu
 tar -xf /tmp/zotero.tar.bz2 -C /tmp
 mv /tmp/Zotero_linux-x86_64 /opt/zotero
 ln -s /opt/zotero/zotero.desktop /usr/local/share/applications/zotero.desktop
+ZOTERO_PATH=$(which zotero)
+if [ -z "${ZOTERO_PATH}" ]
+then
+    echo "Zotero was not installed correctly."
+    exit 206
+fi
 
 # Install Gradle
 mkdir -p /opt/gradle
@@ -78,11 +114,23 @@ mv /opt/gradle/gradle-7.0/* /opt/gradle
 rm -rf /opt/gradle/gradle-7.0
 chmod +x /opt/gradle/bin/gradle
 ln -s /opt/gradle/bin/gradle /usr/bin/gradle
+GRADLE_PATH=$(which gradle)
+if [ -z "${GRADLE_PATH}" ]
+then
+    echo "Gradle was not installed correctly."
+    exit 207
+fi
 
 # Install Leiningen
 curl -L "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" -o /usr/local/bin/lein
 chmod +x /usr/local/bin/lein
 ln -s /usr/local/bin/lein /usr/bin/lein
+LEIN_PATH=$(which lein)
+if [ -z "${LEIN_PATH}" ]
+then
+    echo "Leiningen was not installed correctly."
+    exit 208
+fi
 
 # Add flatpak remotes
 flatpak remote-add --if-not-exists flathub "https://flathub.org/repo/flathub.flatpakrepo"
