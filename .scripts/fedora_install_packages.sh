@@ -7,6 +7,9 @@ then
     exit 1
 fi
 
+# Variables
+WATERFOX_VERSION="G4.0.7"
+
 # Enable fusion repositorties
 dnf -y install "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 dnf -y install "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
@@ -44,7 +47,7 @@ curl -L "https://mirror.openshift.com/pub/openshift-v4/clients/odo/latest/odo-li
 chmod +x /usr/local/bin/odo
 
 # Install Waterfox
-curl -L "https://github.com/WaterfoxCo/Waterfox/releases/download/G4.0.4/waterfox-G4.0.4.en-US.linux-x86_64.tar.bz2" -o /tmp/waterfox.tar.bz2
+curl -L "https://github.com/WaterfoxCo/Waterfox/releases/download/${WATERFOX_VERSION}/waterfox-${WATERFOX_VERSION}.en-US.linux-x86_64.tar.bz2" -o /tmp/waterfox.tar.bz2
 tar -xf /tmp/waterfox.tar.bz2 -C /tmp
 mv /tmp/waterfox /opt/waterfox
 chmod +x /opt/waterfox/waterfox
