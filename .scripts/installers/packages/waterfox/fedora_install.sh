@@ -24,6 +24,8 @@ tar -xf /tmp/waterfox.tar.bz2 -C /tmp
 mv /tmp/waterfox /opt/waterfox
 chmod +x /opt/waterfox/waterfox
 ln -s /opt/waterfox/waterfox /usr/bin/waterfox
+cp waterfox.desktop /opt/waterfox/waterfox.desktop
+ln -s /opt/waterfox/waterfox.desktop /usr/local/share/applications/waterfox.desktop
 
 # Installation Check
 WATERFOX_PATH=$(which waterfox)
