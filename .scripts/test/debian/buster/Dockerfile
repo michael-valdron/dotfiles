@@ -1,9 +1,16 @@
 FROM debian:10-slim
 
+ARG target
+ARG script
+
 USER root
 
-COPY ./run.sh /run.sh
+COPY ${target} /target
+
+WORKDIR /target
+
+RUN sh ${script}
 
 WORKDIR /
 
-RUN sh run.sh
+RUN rm -rf /target
