@@ -1,0 +1,13 @@
+# Test package installs
+
+image: atlassian/default-image:3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Test Fedora
+          script:
+            - sh .scripts/test/fedora/test.sh .scripts/installers/fedora_install_packages.sh 
+          services:
+            - docker
