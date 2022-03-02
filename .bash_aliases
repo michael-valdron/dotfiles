@@ -9,8 +9,8 @@ TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 # alias tmux='tmux -2'
 
 ## openssl ##
-alias encrypt='bash ~/.scripts/enc.sh'
-alias decrypt='bash ~/.scripts/dec.sh'
+# alias encrypt='bash ~/.scripts/enc.sh'
+# alias decrypt='bash ~/.scripts/dec.sh'
 
 ## rclone ##
 # GDrive
