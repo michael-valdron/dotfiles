@@ -12,7 +12,7 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 
-if [[ -f /usr/local/bin/odo ]];
+if [[ -f /usr/local/bin/odo && -n $(which compdef 2> /dev/null) ]];
 then
     complete -o nospace -C /usr/local/bin/odo odo
 fi
