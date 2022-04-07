@@ -59,17 +59,17 @@ alias gce='gcloud compute'
 
 # Home NAS
 ## Mount
-alias sshfs-nas-home='sshfs home-nas:/data/home/mvaldron /mnt/mvaldron/home_nas/home'
-alias sshfs-nas-apps='sshfs home-nas:/data/software /mnt/mvaldron/home_nas/software'
-alias sshfs-nas-videos='sshfs home-nas:/data/videos /mnt/mvaldron/home_nas/videos'
-alias sshfs-nas-shares='sshfs home-nas:/data/shares /mnt/mvaldron/home_nas/shares'
+alias sshfs-nas-home='sshfs home-nas:/data/home/${USER} /mnt/${USER}/home_nas/home'
+alias sshfs-nas-apps='sshfs home-nas:/data/software /mnt/${USER}/home_nas/software'
+alias sshfs-nas-videos='sshfs home-nas:/data/videos /mnt/${USER}/home_nas/videos'
+alias sshfs-nas-shares='sshfs home-nas:/data/shares /mnt/${USER}/home_nas/shares'
 alias sshfs-nas='sshfs-nas-home && sshfs-nas-apps && sshfs-nas-videos && sshfs-nas-shares'
 
 ## Unmount
-alias um-nas-home='fusermount -u /mnt/mvaldron/home_nas/home'
-alias um-nas-apps='fusermount -u /mnt/mvaldron/home_nas/software'
-alias um-nas-videos='fusermount -u /mnt/mvaldron/home_nas/videos'
-alias um-nas-shares='fusermount -u /mnt/mvaldron/home_nas/shares'
+alias um-nas-home='fusermount -u /mnt/${USER}/home_nas/home'
+alias um-nas-apps='fusermount -u /mnt/${USER}/home_nas/software'
+alias um-nas-videos='fusermount -u /mnt/${USER}/home_nas/videos'
+alias um-nas-shares='fusermount -u /mnt/${USER}/home_nas/shares'
 alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 
 ## Anaconda ##
