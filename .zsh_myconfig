@@ -21,6 +21,39 @@ function show_bat() {
     fi
 }
 
+# git repo status function for prompt
+function show_git() {
+    COLOUR="85"
+    GIT_CMD=$(which git 2> /dev/null)
+    YADM_CMD=$(which yadm 2> /dev/null)
+    if [[ ! -z "${GIT_CMD}" ]];
+    then
+        GIT_BRANCH=$($GIT_CMD rev-parse --abbrev-ref HEAD 2> /dev/null)
+    fi
+
+    if [[ "${PWD}" == "${HOME}" && ! -z "${YADM_CMD}" ]];
+    then
+        YADM_BRANCH=$($YADM_CMD rev-parse --abbrev-ref HEAD 2> /dev/null)
+    fi
+
+    if [[ ! -z "${GIT_BRANCH}" ]];
+    then
+        if [ $TERM = 'xterm-256color' ];
+        then
+            echo " %B%F{${COLOUR}}[git: ${GIT_BRANCH}]%b%f"
+        else
+            echo " [git: ${GIT_BRANCH}]%%"
+        fi
+    elif [[ ! -z "${YADM_BRANCH}" ]];
+    then
+        if [ $TERM = 'xterm-256color' ];
+        then
+            echo " %B%F{${COLOUR}}[yadm: ${YADM_BRANCH}]%b%f"
+        else
+            echo " [yadm: ${YADM_BRANCH}]%%"
+        fi
+    fi
+}
 
 # Set Private variables
 if [ -f ~/.zsh_private ]; then
@@ -38,10 +71,12 @@ if [[ $TERM =~ '^.*-256color$' ]];
 then
     PROMPT='%B%F{39}%3~ %f%b %B%F{134}%@%b%f'
     PROMPT+='$(show_bat)'
+    PROMPT+='$(show_git)'
     PROMPT+=$'\n''%B%F{40}$%f%b%B%F{76}>%f%b '
 else
     PROMPT='%~ %@'
     PROMPT+='$(show_bat)'
+    PROMPT+='$(show_git)'
     PROMPT+=$'\n''$> '
 fi
 
