@@ -12,6 +12,18 @@ TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 # alias encrypt='bash ~/.scripts/enc.sh'
 # alias decrypt='bash ~/.scripts/dec.sh'
 
+## dconf ##
+alias dconf-save-all='dconf-save-gterm && dconf-save-ginterface'
+alias dconf-load-all='dconf-load-gterm && dconf-load-ginterface'
+
+# Terminal
+alias dconf-save-gterm='dconf dump /org/gnome/terminal/ > ~/.gterm.conf'
+alias dconf-load-gterm='cat ~/.gterm.conf | dconf load /org/gnome/terminal/'
+
+# Interface
+alias dconf-save-ginterface='dconf dump /org/gnome/desktop/interface/ > ~/.ginterface.conf'
+alias dconf-load-ginterface='cat ~/.ginterface.conf | dconf load /org/gnome/desktop/interface/'
+
 ## rclone ##
 # GDrive
 alias gdrive-mount='rclone mount gdrive:/ "${HOME}/GDrives/Google Drive Stream/" &'
