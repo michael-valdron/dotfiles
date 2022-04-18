@@ -12,6 +12,9 @@ TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 # alias encrypt='bash ~/.scripts/enc.sh'
 # alias decrypt='bash ~/.scripts/dec.sh'
 
+## nix ##
+alias nix-search='nix --extra-experimental-features nix-command --extra-experimental-features flakes search nixpkgs'
+
 ## dconf ##
 alias dconf-save-all='dconf-save-gterm && dconf-save-ginterface'
 alias dconf-load-all='dconf-load-gterm && dconf-load-ginterface'
