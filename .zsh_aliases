@@ -15,6 +15,10 @@ fi
 # alias encrypt='bash ~/.scripts/enc.sh'
 # alias decrypt='bash ~/.scripts/dec.sh'
 
+## dconf ##
+alias dconf-save-gterm='dconf dump /org/gnome/terminal/ > ~/.gterm.conf'
+alias dconf-load-gterm='cat ~/.gterm.conf | dconf load /org/gnome/terminal/'
+
 ## rclone ##
 # GDrive
 alias gdrive-mount='rclone mount gdrive:/ "${HOME}/GDrives/Google Drive Stream/" &'
