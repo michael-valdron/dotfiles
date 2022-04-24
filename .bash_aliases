@@ -94,8 +94,8 @@ alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 # alias clj='clojure'
 
 ## QEMU ##
-alias qemu-mount='sh ~/.scripts/qemu/qemu-mount.sh'
-alias qemu-umount='sh ~/.scripts/qemu/qemu-umount.sh'
+alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
+alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
 
 ## Podman ##
 PODMAN_PATH=$(which podman 2> /dev/null)
