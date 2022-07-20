@@ -1,0 +1,28 @@
+name: Sync File Changes
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [sync]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      
+      - name: Create dotfiles directory
+        run: rsync -av --exclude='.github' ./.[^.]* dotfiles
+
+      - name: Create dotfiles branch
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          BRANCH: dotfiles
+          FOLDER: dotfiles
+          REPOSITORY_NAME: michael-valdron/dotfiles
+          CLEAN: true
