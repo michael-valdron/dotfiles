@@ -9,4 +9,5 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     "git.alwaysSignOff": true,
     "extensions.ignoreRecommendations": true,
+    "go.toolsManagement.autoUpdate": true
 }
