@@ -1,27 +1,21 @@
 ;; Copyright 2022, Michael Valdron
 
-;; Define and refresh package repos
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
-;; Install deps
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; Load scripts
+(load-file (concat user-emacs-directory "package.el"))
 
 ;; Requires
 (require 'use-package)
 
-;; Variables
-(setq use-package-always-ensure 't)
-
+;; Set tab size
+(setq default-tab-width 4)
+ 
 ;; Enable line numbers
 (global-linum-mode t)
 
 ;; Enable autocomplete
 ;; (global-autocomplete t)
 
+;; Set editor theme
 (use-package darcula-theme
 	     :config (load-theme 'darcula t))
 
@@ -30,7 +24,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(exotica-theme use-package)))
+ '(package-selected-packages '(go-mode use-package exotica-theme darcula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
