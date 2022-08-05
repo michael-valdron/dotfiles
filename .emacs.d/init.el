@@ -7,13 +7,13 @@
 (require 'use-package)
 
 ;; Set tab size
-(setq default-tab-width 4)
+(setq-default tab-width 4)
  
 ;; Enable line numbers
 (global-linum-mode t)
 
 ;; Enable autocomplete
-;; (global-autocomplete t)
+(global-company-mode t)
 
 ;; Set editor theme
 (use-package darcula-theme
