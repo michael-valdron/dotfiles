@@ -16,7 +16,11 @@
       (package-install pkg))))
 
 ;; Init install packages
-(install-packages 'use-package 'go-mode)
+(install-packages
+ 'use-package
+ 'real-auto-save
+ 'company
+ 'go-mode)
 
 ;; Variables
 (setq use-package-always-ensure 't)
