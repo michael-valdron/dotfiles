@@ -8,7 +8,17 @@
 
 ;; Set tab size
 (setq-default tab-width 4)
- 
+
+;; Set temporary file directory, referenced from: https://www.emacswiki.org/emacs/AutoSave
+(let ((tmp-dir "~/.tmp"))
+  (unless (file-directory-p tmp-dir)
+    (make-directory tmp-dir))
+  (setq temporary-file-directory tmp-dir))
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; Enable line numbers
 (global-linum-mode t)
 
