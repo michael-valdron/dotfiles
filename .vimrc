@@ -50,6 +50,7 @@ set hlsearch
 " Colour scheme
 set background=dark
 colorscheme koehler
+hi Normal guibg=NONE ctermbg=NONE
 
 " ------------------------------------- coc.nvim config -------------------------------------------
 
