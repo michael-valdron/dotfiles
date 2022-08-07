@@ -26,9 +26,16 @@
 (global-company-mode t)
 
 ;; Set editor theme
-(use-package darcula-theme
-	     :config (load-theme 'darcula t))
+(use-package monokai-theme
+	     :config (load-theme 'monokai t))
 
+;; Set Transparent Background, referenced from: https://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
+(defun on-after-init ()
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
+(add-hook 'window-setup-hook 'on-after-init)
+
+;; Custom Variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
