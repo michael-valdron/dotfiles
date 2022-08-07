@@ -9,6 +9,7 @@ filetype plugin on
 
 filetype indent on
 
+" Syntax Highlight Enabled
 syntax on
 
 " Show line numbers
@@ -19,6 +20,9 @@ set spell
 
 " Plugins
 call plug#begin()
+
+" Monokai Theme
+Plug 'sickill/vim-monokai'
 
 " NERDTree
 Plug 'preservim/nerdtree'
@@ -49,8 +53,9 @@ set hlsearch
 
 " Colour scheme
 set background=dark
-colorscheme koehler
+colorscheme monokai
 hi Normal guibg=NONE ctermbg=NONE
+hi Comment ctermfg=245 guifg=#8a8a8a
 
 " ------------------------------------- coc.nvim config -------------------------------------------
 
