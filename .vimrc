@@ -27,8 +27,10 @@ Plug 'sickill/vim-monokai'
 " NERDTree
 Plug 'preservim/nerdtree'
 
-" Code-complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Code-complete (if vim version > 8.1.1719)
+if v:version >= 811
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 call plug#end()
 
@@ -56,6 +58,10 @@ set background=dark
 colorscheme monokai
 hi Normal guibg=NONE ctermbg=NONE
 hi Comment ctermfg=245 guifg=#8a8a8a
+
+if !exists('g:loaded_coc.nvim') || (v:version < 811)
+	finish
+endif
 
 " ------------------------------------- coc.nvim config -------------------------------------------
 
