@@ -50,7 +50,7 @@ function show_git() {
         then
             echo " %B%F{${COLOUR}}[yadm: ${YADM_BRANCH}]%b%f"
         else
-            echo " [yadm: ${YADM_BRANCH}]%%"
+            echo " [yadm: ${YADM_BRANCH}]"
         fi
     fi
 }
