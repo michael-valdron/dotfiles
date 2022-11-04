@@ -10,5 +10,7 @@
     "git.alwaysSignOff": true,
     "extensions.ignoreRecommendations": true,
     "go.toolsManagement.autoUpdate": true,
-    "nxConsole.enableTelemetry": false
+    "nxConsole.enableTelemetry": false,
+    "vscode-kubernetes.kubectl-path": "/bin/minikube kubectl --",
+    "vscode-kubernetes.minikube-path": "/bin/minikube",
 }
