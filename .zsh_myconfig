@@ -50,7 +50,7 @@ function show_git() {
         then
             echo " %B%F{${COLOUR}}[yadm: ${YADM_BRANCH}]%b%f"
         else
-            echo " [yadm: ${YADM_BRANCH}]%%"
+            echo " [yadm: ${YADM_BRANCH}]"
         fi
     fi
 }
@@ -69,12 +69,12 @@ fi
 # Personal prompt config
 if [[ $TERM =~ '^.*-256color$' ]];
 then
-    PROMPT='%B%F{39}%3~ %f%b %B%F{134}%@%b%f'
+    PROMPT='%B%F{40}%m:%B%F{39}%~ %f%b %B%F{134}%D{%L:%M:%S%p}%b%f'
     PROMPT+='$(show_bat)'
     PROMPT+='$(show_git)'
     PROMPT+=$'\n''%B%F{40}$%f%b%B%F{76}>%f%b '
 else
-    PROMPT='%~ %@'
+    PROMPT='%m:%~ %D{%L:%M:%S%p}'
     PROMPT+='$(show_bat)'
     PROMPT+='$(show_git)'
     PROMPT+=$'\n''$> '

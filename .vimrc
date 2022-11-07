@@ -59,7 +59,7 @@ colorscheme monokai
 hi Normal guibg=NONE ctermbg=NONE
 hi Comment ctermfg=245 guifg=#8a8a8a
 
-if !exists('g:loaded_coc.nvim') || (v:version < 811)
+if v:version < 811
 	finish
 endif
 
