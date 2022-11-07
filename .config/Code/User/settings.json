@@ -10,5 +10,8 @@
     "git.alwaysSignOff": true,
     "extensions.ignoreRecommendations": true,
     "go.toolsManagement.autoUpdate": true,
-    "nxConsole.enableTelemetry": false
+    "nxConsole.enableTelemetry": false,
+    "openapi.approvedHostnames": [
+        "raw.githubusercontent.com"
+    ]
 }
