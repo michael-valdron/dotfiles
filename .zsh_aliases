@@ -54,6 +54,9 @@ alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --tra
 # alias home-vpn-disconnect='sudo killall openvpn'
 
 ## SSH ##
+# Edit SSH Config
+alias ssh-config='${EDITOR} ~/.ssh/config'
+
 # Home NAS
 alias ssh-nas='ssh home-nas'
 
