@@ -100,9 +100,6 @@ alias clj='clojure'
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
 
-## Kubernetes ##
-alias kubectl='minikube kubectl --'
-
 ## Podman ##
 PODMAN_PATH=$(which podman 2> /dev/null)
 if [ -f "${PODMAN_PATH}" ];
