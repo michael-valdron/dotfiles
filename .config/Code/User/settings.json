@@ -14,6 +14,11 @@
     "openapi.approvedHostnames": [
         "raw.githubusercontent.com"
     ]
-    "vscode-kubernetes.kubectl-path": "/bin/minikube kubectl --",
     "vscode-kubernetes.minikube-path": "/bin/minikube",
+    "vscode-kubernetes.kubectl-path": "/bin/minikube kubectl -- ",
+    "vs-kubernetes": {
+        "vscode-kubernetes.kubectl-path.linux": "~/.local/state/vs-kubernetes/tools/kubectl/kubectl",
+        "vscode-kubernetes.helm-path.linux": "~/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+    },
+    "vscode-kubernetes.helm-path": "/bin/helm"
 }
