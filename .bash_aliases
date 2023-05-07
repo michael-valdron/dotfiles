@@ -100,6 +100,16 @@ alias um-nas='um-nas-home && um-nas-apps && um-nas-videos && um-nas-shares'
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
 
+## Kubernetes ##
+alias minikube-start='minikube start'
+alias minikube-stop='minikube stop && minikube delete'
+alias install-kubectl='sh ~/.scripts/installers/packages/kubectl/install.sh'
+alias update-kubectl='sh ~/.scripts/installers/packages/kubectl/update.sh'
+alias remove-kubectl='sh ~/.scripts/installers/packages/kubectl/remove.sh'
+alias kv='kubectl version --short'
+alias kgp='kubectl get pods'
+alias kgr='kubectl get routes'
+
 ## Podman ##
 PODMAN_PATH=$(which podman 2> /dev/null)
 if [ -f "${PODMAN_PATH}" ];
