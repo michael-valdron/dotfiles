@@ -14,9 +14,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          submodules: recursive
       
       - name: Create dotfiles directory
-        run: rsync -av --exclude='.github' ./.[^.]* dotfiles
+        run: rsync -av --exclude='.github' --exclude='.gitmodules' ./.[^.]* dotfiles
 
       - name: Create dotfiles branch
         uses: JamesIves/github-pages-deploy-action@v4.2.5
