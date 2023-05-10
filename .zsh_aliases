@@ -113,6 +113,15 @@ alias kv='kubectl version --short'
 alias kgp='kubectl get pods'
 alias kgr='kubectl get routes'
 
+## Che ##
+alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
+alias update-chectl='sh ~/.scripts/installers/packages/chectl/update.sh'
+alias remove-chectl='sh ~/.scripts/installers/packages/chectl/remove.sh'
+alias minikube-chestart='minikube-start --addons=ingress,dashboard --vm=true --memory=10240 --cpus=4 --disk-size=50GB --kubernetes-version=v1.23.9'
+alias chestart='minikube-chestart && chectl server:deploy --platform minikube'
+alias chestop='chectl server:stop && chectl server:delete -y && minikube-stop'
+alias chestatus='chectl server:status'
+
 ## Podman ##
 PODMAN_PATH=$(which podman 2> /dev/null)
 if [ -f "${PODMAN_PATH}" ];
