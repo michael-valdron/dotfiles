@@ -46,6 +46,10 @@ alias odrive-umount='fusermount -u "${HOME}/GDrives/OneDrive Stream"'
 alias odrive-push='rclone sync "${PWD}" "onedrive:${1}" -v -u --checkers 1 --transfers 1'
 alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --transfers 1'
 
+## Duplicity ##
+alias backup='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/backup.sh'
+alias restore='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/restore.sh'
+
 ## VPN ##
 # alias home-vpn-connect='sudo openvpn --config ~/client.ovpn --daemon'
 # alias home-vpn-disconnect='sudo killall openvpn'
