@@ -54,9 +54,6 @@ alias ssh-config='${EDITOR} ~/.ssh/config'
 
 ## GCP ##
 alias gce='gcloud compute'
-# alias od-dev-start='gcloud compute instances start $OD_DEV_HOST --zone=us-central1-c'
-# alias od-dev-ssh='gcloud compute ssh $OD_DEV_USER@$OD_DEV_HOST --zone=us-central1-c'
-# alias od-dev-stop='gcloud compute instances stop $OD_DEV_HOST --zone=us-central1-c'
 
 ## SSHFS ##
 
