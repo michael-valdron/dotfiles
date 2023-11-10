@@ -37,12 +37,6 @@ alias gdrive-umount='fusermount -u "${HOME}/GDrives/Google Drive Stream"'
 alias gdrive-push='rclone sync "${PWD}" "gdrive:${1}" -v -u --checkers 1 --transfers 1'
 alias gdrive-pull='rclone sync "gdrive:${1}" "${PWD}" -v -u --checkers 1 --transfers 1'
 
-# UOIT Drive
-alias udrive-mount='rclone mount udrive:/ "${HOME}/GDrives/UOIT Drive Stream/" &'
-alias udrive-umount='fusermount -u "${HOME}/GDrives/UOIT Drive Stream"'
-alias udrive-push='rclone sync "${PWD}" "udrive:${1}" -v -u --checkers 1 --transfers 1'
-alias udrive-pull='rclone sync "udrive:${1}" "${PWD}" -v -u --checkers 1 --transfers 1'
-
 # OneDrive
 alias odrive-mount='rclone mount onedrive:/ "${HOME}/GDrives/OneDrive Stream/" &'
 alias odrive-umount='fusermount -u "${HOME}/GDrives/OneDrive Stream"'
