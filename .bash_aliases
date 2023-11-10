@@ -67,7 +67,7 @@ alias gce='gcloud compute'
 #alias deactivate='~/anaconda3/bin/deactivate'
 
 ## Clojure ##
-# alias clj='clojure'
+alias clj='clojure'
 
 ## QEMU ##
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
