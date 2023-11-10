@@ -134,8 +134,7 @@ alias chestop='chectl server:stop && chectl server:delete -y && minikube-stop'
 alias chestatus='chectl server:status'
 
 ## Podman ##
-PODMAN_PATH=$(which podman 2> /dev/null)
-if [ -f "${PODMAN_PATH}" ];
+if [[ -z $(command -v docker 2> /dev/null) ]] && [[ ! -z $(command -v podman 2> /dev/null) ]];
 then
 	alias docker='podman'
 fi
