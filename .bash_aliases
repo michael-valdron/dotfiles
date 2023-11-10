@@ -58,17 +58,7 @@ alias restore='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scrip
 # Edit SSH Config
 alias ssh-config='${EDITOR} ~/.ssh/config'
 
-# Home NAS
-alias ssh-nas='ssh home-nas'
-
-# dbsci
-alias ssh-dbsci-sat='ssh dbsci-sat'
-alias ssh-dbsci-twitter='ssh dbsci-twitter'
-
-# rtrsci
-alias ssh-rtrsci-dev='ssh rtrsci-dev'
-
-# GCP
+## GCP ##
 alias gce='gcloud compute'
 # alias od-dev-start='gcloud compute instances start $OD_DEV_HOST --zone=us-central1-c'
 # alias od-dev-ssh='gcloud compute ssh $OD_DEV_USER@$OD_DEV_HOST --zone=us-central1-c'
