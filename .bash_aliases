@@ -70,6 +70,11 @@ alias clj='clojure'
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
 
+## Podman ##
+alias podman-clean='podman rm --all --force && podman image rm --all --force && podman network rm $(podman network ls -q | grep -vE "podman")'
+alias pm-clean='podman-clean'
+alias pm='podman'
+
 ## Kubernetes ##
 alias minikube-start='sh ~/.scripts/minikube/start.sh'
 alias minikube-pm-start='MINIKUBE_DRIVER=podman minikube-start'
