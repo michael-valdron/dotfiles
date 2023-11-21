@@ -3,6 +3,7 @@
 TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 
 # aliases
+alias clear-recent='rm ~/.local/share/recently-used.xbel'
 
 ## tmux ##
 # if tmux colour is not working..

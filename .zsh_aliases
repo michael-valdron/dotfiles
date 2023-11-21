@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
 # aliases
+alias clear-recent='rm ~/.local/share/recently-used.xbel'
+
 ## Server aliases ##
 if [ -f "${HOME}/.zsh_server_aliases" ];
 then
