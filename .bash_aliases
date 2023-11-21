@@ -66,6 +66,13 @@ alias gce='gcloud compute'
 ## Clojure ##
 alias clj='clojure'
 
+## Go ##
+alias gom='go mod'
+alias go-init='go mod init'
+alias go-tidy='go mod tidy'
+alias go-vendor='go mod vendor'
+alias go-tests='go test ./...'
+
 ## QEMU ##
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
