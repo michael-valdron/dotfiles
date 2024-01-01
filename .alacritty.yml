@@ -18,3 +18,11 @@ cursor:
 font:
   builtin_box_drawing: false
   size: 14
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
