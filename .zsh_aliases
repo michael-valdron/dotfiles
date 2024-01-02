@@ -49,6 +49,11 @@ alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --tra
 alias backup='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/backup.sh'
 alias restore='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/restore.sh'
 
+## pCloud ##
+alias pcloud='/opt/pcloud/pcloud'
+alias install-pcloud='sh ~/.scripts/installers/packages/pcloud/fedora_install.sh'
+alias remove-pcloud='sh ~/.scripts/installers/packages/pcloud/remove.sh'
+
 ## VPN ##
 # alias home-vpn-connect='sudo openvpn --config ~/client.ovpn --daemon'
 # alias home-vpn-disconnect='sudo killall openvpn'
