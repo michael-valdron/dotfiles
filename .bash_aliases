@@ -108,7 +108,7 @@ alias klogs='sh ~/.scripts/kubectl/logs.sh'
 
 ## Che ##
 alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
-alias update-chectl='sh ~/.scripts/installers/packages/chectl/update.sh'
+alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
 alias remove-chectl='sh ~/.scripts/installers/packages/chectl/remove.sh'
 alias minikube-chestart='minikube start --cpus=4 --memory=10240 --vm=true --disk-size=50GB --kubernetes-version=v1.23.9 --addons=dashboard,ingress'
 alias minikube-pm-chestart='minikube-chestart --driver=podman'
