@@ -9,10 +9,6 @@ alias clear-recent='rm ~/.local/share/recently-used.xbel'
 # if tmux colour is not working..
 # alias tmux='tmux -2'
 
-## openssl ##
-# alias encrypt='bash ~/.scripts/enc.sh'
-# alias decrypt='bash ~/.scripts/dec.sh'
-
 ## nix ##
 alias nix-search='nix --extra-experimental-features nix-command --extra-experimental-features flakes search nixpkgs'
 
@@ -50,24 +46,12 @@ alias pcloud='/opt/pcloud/pcloud'
 alias install-pcloud='sh ~/.scripts/installers/packages/pcloud/fedora_install.sh'
 alias remove-pcloud='sh ~/.scripts/installers/packages/pcloud/remove.sh'
 
-## VPN ##
-# alias home-vpn-connect='sudo openvpn --config ~/client.ovpn --daemon'
-# alias home-vpn-disconnect='sudo killall openvpn'
-
 ## SSH ##
 # Edit SSH Config
 alias ssh-config='${EDITOR} ~/.ssh/config'
 
 ## GCP ##
 alias gce='gcloud compute'
-
-## SSHFS ##
-
-## Anaconda ##
-# envs
-#alias conda='~/anaconda3/bin/conda'
-#alias activate='~/anaconda3/bin/activate'
-#alias deactivate='~/anaconda3/bin/deactivate'
 
 ## Clojure ##
 alias clj='clojure'
@@ -87,6 +71,10 @@ alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
 alias podman-clean='podman rm --all --force && podman image rm --all --force && podman network rm $(podman network ls -q | grep -vE "podman")'
 alias pm-clean='podman-clean'
 alias pm='podman'
+if [[ -z $(command -v docker 2> /dev/null) ]] && [[ ! -z $(command -v podman 2> /dev/null) ]];
+then
+	alias docker='podman'
+fi
 
 ## Kubernetes ##
 alias minikube-start='sh ~/.scripts/minikube/start.sh'
@@ -116,12 +104,6 @@ alias minikube-pm-chestart='minikube-chestart --driver=podman'
 alias chestart='minikube-chestart && chectl server:deploy --platform minikube'
 alias chestop='chectl server:stop && chectl server:delete -y && minikube-stop'
 alias chestatus='chectl server:status'
-
-## Podman ##
-if [[ -z $(command -v docker 2> /dev/null) ]] && [[ ! -z $(command -v podman 2> /dev/null) ]];
-then
-	alias docker='podman'
-fi
 
 ## yq ##
 alias install-yq='go install github.com/mikefarah/yq/v4@"${YQ_VERSION:-latest}"'
