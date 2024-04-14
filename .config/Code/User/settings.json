@@ -22,5 +22,14 @@
     },
     "vscode-kubernetes.helm-path": "/bin/helm",
     "vscode-kubernetes.kubectl-path.linux": "/usr/local/bin/kubectl",
-    "nxConsole.showNodeVersionOnStartup": false
+    "nxConsole.showNodeVersionOnStartup": false,
+    "python.condaPath": "/home/mvaldron/micromamba/condabin/conda",
+    "terminal.integrated.inheritEnv": false,
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "dotnetAcquisitionExtension.existingDotnetPath": [
+        {
+            "extensionId": "AvaloniaTeam.vscode-avalonia",
+            "path": "/usr/bin/dotnet"
+        }
+    ]
 }
