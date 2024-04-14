@@ -122,3 +122,6 @@ if [[ -z $(command -v docker 2> /dev/null) ]] && [[ ! -z $(command -v podman 2> 
 then
 	alias docker='podman'
 fi
+
+## yq ##
+alias install-yq='go install github.com/mikefarah/yq/v4@"${YQ_VERSION:-latest}"'
