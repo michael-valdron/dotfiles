@@ -94,6 +94,7 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 export USE_PODMAN=true # set USE_PODMAN for script docker alias to true (all docker commands will run using podman)
 export CONTAINER_ENGINE=podman # use podman as container engine by default
 export CHECTL_CHANNEL=next # use 'next' version channel for installing chectl
+export CHECTL_PLATFORM=openshift # use 'openshift' platform for che by default
 
 # Key Fixes
 # Referenced from: https://wiki.archlinux.org/index.php/Zsh#Key_bindings
