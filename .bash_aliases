@@ -108,8 +108,8 @@ alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
 alias remove-chectl='sh ~/.scripts/installers/packages/chectl/remove.sh'
 alias minikube-chestart='minikube start --cpus=4 --memory=10240 --vm=true --disk-size=50GB --kubernetes-version=v1.23.9 --addons=dashboard,ingress'
 alias minikube-pm-chestart='minikube-chestart --driver=podman'
-alias chestart='minikube-chestart && chectl server:deploy --platform minikube'
-alias chestop='chectl server:stop && chectl server:delete -y && minikube-stop'
+alias chestart='sh ~/.scripts/chectl/start.sh'
+alias chestop='sh ~/.scripts/chectl/stop.sh'
 alias chestatus='chectl server:status'
 
 ## yq ##
