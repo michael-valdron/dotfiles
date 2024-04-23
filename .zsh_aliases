@@ -78,6 +78,7 @@ fi
 alias minikube-start='sh ~/.scripts/minikube/start.sh'
 alias minikube-pm-start='MINIKUBE_DRIVER=podman minikube-start'
 alias minikube-stop='sh ~/.scripts/minikube/stop.sh'
+alias minikube-dash='minikube dashboard'
 alias install-kubectl='sh ~/.scripts/installers/packages/kubectl/install.sh'
 alias update-kubectl='sh ~/.scripts/installers/packages/kubectl/update.sh'
 alias remove-kubectl='sh ~/.scripts/installers/packages/kubectl/remove.sh'
