@@ -61,6 +61,12 @@ alias go-tidy='go mod tidy'
 alias go-vendor='go mod vendor'
 alias go-tests='go test ./...'
 
+## git ##
+alias git-push-all='for remote in `git remote`; do git push $remote; done'
+
+## yadm ##
+alias yadm-push-all='for remote in `yadm remote`; do yadm push $remote; done'
+
 ## QEMU ##
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
