@@ -108,6 +108,18 @@ alias knamespaceadd='kubectl create namespace'
 alias kchnamespace='kubectl config set-context --current --namespace'
 alias klogs='sh ~/.scripts/kubectl/logs.sh'
 
+## OpenShift Console CLI (oc) ##
+alias oversion='oc version'
+alias odeployments='oc get deploy'
+alias oconfigmaps='oc get configmap'
+alias opods='oc get pods'
+alias oservices='oc get service'
+alias oroutes='oc get route'
+alias onamespace='oc project'
+alias onamespaces='oc projects'
+alias onamespaceadd='oc create namespace'
+alias ochnamespace='oc project'
+
 ## Che ##
 alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
 alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
