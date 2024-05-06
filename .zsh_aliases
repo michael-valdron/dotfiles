@@ -113,10 +113,10 @@ alias oconfigmaps='oc get configmap'
 alias opods='oc get pods'
 alias oservices='oc get service'
 alias oroutes='oc get route'
-alias onamespace='oc project'
+alias onamespace='sh ~/.scripts/oc/project.sh'
 alias onamespaces='oc projects'
 alias onamespaceadd='oc create namespace'
-alias ochnamespace='oc project'
+alias ochnamespace='sh ~/.scripts/oc/project.sh --change'
 
 ## Che ##
 alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
