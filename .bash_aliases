@@ -120,6 +120,13 @@ alias onamespaces='oc projects'
 alias onamespaceadd='oc create namespace'
 alias ochnamespace='sh ~/.scripts/oc/project.sh --change'
 
+## OpenShift Installer (openshift-install) ##
+alias oinstall-version='openshift-install version'
+alias oinstall-create-cluster='sh ~/.scripts/openshift-install/create.sh cluster'
+alias oinstall-destroy-cluster='sh ~/.scripts/openshift-install/destroy.sh cluster'
+alias oinstall-create-install-config='sh ~/.scripts/openshift-install/create.sh install-config'
+alias oinstall-config-edit='sh ~/.scripts/openshift-install/config_edit.sh'
+
 ## Che ##
 alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
 alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
