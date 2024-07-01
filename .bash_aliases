@@ -78,9 +78,11 @@ alias go-tests='go test ./...'
 
 ## git ##
 alias git-push-all='for remote in `git remote`; do git push $remote; done'
+alias git-pull='git pull --recurse-submodules'
 
 ## yadm ##
 alias yadm-push-all='for remote in `yadm remote`; do yadm push $remote; done'
+alias yadm-pull='yadm pull --recurse-submodules'
 
 ## QEMU ##
 alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
