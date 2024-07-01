@@ -3,6 +3,13 @@
 TZ=$(timedatectl status | grep -Po "(?<=Time zone: )(.+)(?= \()")
 
 # aliases
+
+## Private Aliases ##
+if [ -f '~/.bash_private_aliases' ]; then
+	source ~/.bash_private_aliases
+fi
+
+## GNOME ##
 alias clear-recent='rm ~/.local/share/recently-used.xbel'
 
 ## tmux ##

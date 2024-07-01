@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 
 # aliases
+
+## Private Aliases ##
+if [ -f '~/.zsh_private_aliases' ]; then
+	source ~/.zsh_private_aliases
+fi
+
+## GNOME ##
 alias clear-recent='rm ~/.local/share/recently-used.xbel'
 
 ## tmux ##
