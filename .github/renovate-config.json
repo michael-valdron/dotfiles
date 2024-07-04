@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "git-submodules": {
+    "enabled": true,
+    "versioning": "git",
+    "fileMatch": [
+      "(^|/)\\.gitmodules$"
+    ]
+  },
+  "sbt": {
+    "enabled": false
+  }
+}
