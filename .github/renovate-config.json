@@ -6,5 +6,8 @@
     "fileMatch": [
       "(^|/)\\.gitmodules$"
     ]
+  },
+  "sbt": {
+    "enabled": false
   }
 }
