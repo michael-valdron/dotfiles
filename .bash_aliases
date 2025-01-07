@@ -184,3 +184,7 @@ alias sdkman-remove='bash ~/.scripts/installers/packages/sdkman/remove.sh'
 ## gradle ##
 alias install-gradle='sdk install gradle'
 alias remove-gradle='sdk uninstall gradle'
+
+## leiningen ##
+alias install-leiningen='sdk install leiningen'
+alias remove-leiningen='sdk uninstall leiningen'
