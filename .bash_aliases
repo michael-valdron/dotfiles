@@ -175,3 +175,8 @@ alias chestatus='chectl server:status'
 
 ## yq ##
 alias install-yq='go install github.com/mikefarah/yq/v4@"${YQ_VERSION:-latest}"'
+
+## sdkman ##
+alias sdkman-install-check='bash ~/.scripts/installers/packages/sdkman/check_install.sh'
+alias sdkman-install='bash ~/.scripts/installers/packages/sdkman/install.sh'
+alias sdkman-remove='bash ~/.scripts/installers/packages/sdkman/remove.sh'
