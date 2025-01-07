@@ -188,3 +188,7 @@ alias remove-gradle='sdk uninstall gradle'
 ## leiningen ##
 alias install-leiningen='sdk install leiningen'
 alias remove-leiningen='sdk uninstall leiningen'
+
+## maven ##
+alias install-maven='sdk install maven'
+alias remove-maven='sdk uninstall maven'
