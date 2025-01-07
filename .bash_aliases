@@ -192,3 +192,7 @@ alias remove-leiningen='sdk uninstall leiningen'
 ## maven ##
 alias install-maven='sdk install maven'
 alias remove-maven='sdk uninstall maven'
+
+## sbt ##
+alias install-sbt='sdk install sbt'
+alias remove-sbt='sdk uninstall sbt'
