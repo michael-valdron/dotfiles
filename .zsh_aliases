@@ -84,6 +84,10 @@ alias pcloud='/opt/pcloud/pcloud'
 alias install-pcloud='sh ~/.scripts/installers/packages/pcloud/fedora_install.sh'
 alias remove-pcloud='sh ~/.scripts/installers/packages/pcloud/remove.sh'
 
+## GrayJay ##
+alias install-grayjay='sh ~/.scripts/installers/packages/grayjay/install.sh'
+alias remove-grayjay='sh ~/.scripts/installers/packages/grayjay/remove.sh'
+
 ## SSH ##
 # Edit SSH Config
 alias ssh-config='${EDITOR} ~/.ssh/config'
