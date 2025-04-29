@@ -38,5 +38,6 @@ export PATH="${GOBIN}:$PATH"
 export ORTOOLS_LIB="${HOME}/.local/lib/ortools"
 export USE_PODMAN=true # set USE_PODMAN for script docker alias to true (all docker commands will run using podman)
 export CONTAINER_ENGINE=podman # use podman as container engine by default
+export CONTAINER_BINARY=podman # use podman as container binary by default
 export CHECTL_CHANNEL=next # use 'next' version channel for installing chectl
 export CHECTL_PLATFORM=crc # use 'crc' platform for che by default until https://github.com/eclipse-che/che/issues/22880 is resolved
