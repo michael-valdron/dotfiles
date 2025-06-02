@@ -1,6 +1,3 @@
-# My Dotfiles
+# My Dotfiles - Work
 
-My personal dotfiles for my user profile. 
-
-## Terminal Prompt
-![Terminal Prompt](res/img/term.png)
+My dotfiles for my work user profile.
