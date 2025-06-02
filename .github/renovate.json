@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "baseBranches": ["main", "work"],
   "git-submodules": {
     "enabled": true,
     "versioning": "git",
