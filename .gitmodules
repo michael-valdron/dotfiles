@@ -4,4 +4,5 @@
 [submodule ".config/VSCodium/User"]
 	path = .config/VSCodium/User
 	url = https://github.com/michael-valdron/code-config.git
+	branch = work
 
