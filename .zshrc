@@ -9,3 +9,8 @@ if [[ -f ~/.zsh_myconfig ]];
 then
     source ~/.zsh_myconfig
 fi
+
+if [[ -f ~/.zsh_local ]]; then
+    source ~/.zsh_local
+fi
+
