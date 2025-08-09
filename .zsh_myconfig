@@ -97,6 +97,13 @@ export CONTAINER_BINARY=podman # use podman as container binary by default
 export CHECTL_CHANNEL=next # use 'next' version channel for installing chectl
 export CHECTL_PLATFORM=crc # use 'crc' platform for che by default until https://github.com/eclipse-che/che/issues/22880 is resolved
 
+# set default compose file
+if [ ! -f "compose.yml" ] && [ ! -f "docker-compose.yml" ] && [ ! -f "container-compose.yml" ]; then
+    if [ -f "${HOME}/.compose/compose.yml" ]; then
+        export COMPOSE_FILE="${HOME}/.compose/compose.yml"
+    fi
+fi
+
 # Key Fixes
 # Referenced from: https://wiki.archlinux.org/index.php/Zsh#Key_bindings
 # create a zkbd compatible hash;
