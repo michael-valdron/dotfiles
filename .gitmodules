@@ -5,4 +5,6 @@
 	path = .config/VSCodium/User
 	url = https://github.com/michael-valdron/code-config.git
 	branch = work
-
+[submodule ".rhdhpai/scripts"]
+	path = .rhdhpai/scripts
+	url = github:michael-valdron/rhdhpai-scripts.git
