@@ -18,7 +18,7 @@ match_lhs=""
 [[ -z ${match_lhs}    ]] \
 	&& type -P dircolors >/dev/null \
 	&& match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && color_prompt=yes
+colors=$(tput colors 2>/dev/null) && [ "$colors" -gt 0 ] && color_prompt=yes
 
 # Personal prompt config
 if [ "$color_prompt" = yes ]; then
