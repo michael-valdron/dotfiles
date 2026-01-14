@@ -22,7 +22,8 @@ colors=$(tput colors 2>/dev/null) && [ "$colors" -gt 0 ] && color_prompt=yes
 
 # Personal prompt config
 if [ "$color_prompt" = yes ]; then
-   PS1='\[\033[00m\]\$\[\033[01;32m\]>\[\033[00m\] '
+   PS1='\[\033[01;32m\]\h:\[\e[34m\]\W  \[\e[35m\]$(date "+%I:%M:%S %p")'
+   PS1+='\n''\[\033[00m\]\$\[\033[01;32m\]>\[\033[00m\] '
 else
    PS1='\$> '
 fi
