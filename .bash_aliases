@@ -201,3 +201,6 @@ alias remove-maven='sdk uninstall maven'
 ## sbt ##
 alias install-sbt='sdk install sbt'
 alias remove-sbt='sdk uninstall sbt'
+
+## renovate ##
+alias run-renovate='RENOVATE_USE_CONTAINER=true bash ~/.scripts/renovate/run.sh'
