@@ -15,7 +15,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/(^|/)profile\\.clj$/"],
+      "managerFilePatterns": ["/^(.*\\/)?profile\\.clj$/"],
       "matchStrings": ["(?<depName>.+)\\s+\"(?<currentValue>[0-9.]+)\""],
       "datasourceTemplate": "maven",
       "depNameTemplate": "{{{depName}}}"
