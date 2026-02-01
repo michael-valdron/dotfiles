@@ -11,4 +11,10 @@
   "sbt": {
     "enabled": false
   }
+  "lein-profile": {
+    "managerFilePatterns": [
+      "/(^|/)project\\.clj$/"
+    ],
+    "versioning": "maven"
+  }
 }
