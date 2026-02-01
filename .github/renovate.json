@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranches": ["main", "work"],
+  "enabledManagers": ["git-submodules", "custom.regex",  "github-actions"],
   "git-submodules": {
     "enabled": true,
     "versioning": "git",
@@ -10,11 +11,13 @@
   },
   "sbt": {
     "enabled": false
-  }
-  "lein-profile": {
-    "managerFilePatterns": [
-      "/(^|/)project\\.clj$/"
-    ],
-    "versioning": "maven"
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)profile\\.clj$/"],
+      "matchStrings": ["(?<depName>)\\s+\"(?<currentValue>)\""],
+      "datasourceTemplate": "maven"
+    }
+  ]
 }
