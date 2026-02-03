@@ -23,4 +23,5 @@ jobs:
     needs: get-compose-ref
     uses: michael-valdron/compose/.github/workflows/ci.yaml@main
     with:
+      submodule: .compose
       ref: ${{ needs.get-compose-ref.outputs.compose_ref }}
