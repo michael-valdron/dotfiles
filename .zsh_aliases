@@ -95,6 +95,13 @@ alias ssh-config='${EDITOR} ~/.ssh/config'
 ## GCP ##
 alias gce='gcloud compute'
 
+## DevContainers ##
+alias dev-shell='podman-compose run --rm dev'
+alias dev-node='dev-shell node'
+alias dev-npm='dev-shell npm'
+alias dev-npx='dev-shell npx'
+alias dev-yarn='dev-shell yarn'
+
 ## Clojure ##
 alias clj='clojure'
 
