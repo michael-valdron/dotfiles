@@ -101,6 +101,7 @@ alias dev-node='dev-shell node'
 alias dev-npm='dev-shell npm'
 alias dev-npx='dev-shell npx'
 alias dev-yarn='dev-shell yarn'
+alias dev-nvm='dev-shell nvm'
 
 ## Clojure ##
 alias clj='clojure'
