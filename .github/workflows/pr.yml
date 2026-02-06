@@ -5,23 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  get-compose-ref:
-    runs-on: ubuntu-latest
-    outputs:
-      compose_ref: ${{ steps.ref.outputs.sha }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-        with:
-          submodules: false
-      - name: Get submodule SHA
-        id: ref
-        run: |
-          SHA=$(git ls-tree HEAD .compose | awk '{print $3}')
-          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
   compose-ci:
-    needs: get-compose-ref
     uses: michael-valdron/compose/.github/workflows/ci.yaml@main
     with:
       submodule: .compose
-      ref: ${{ needs.get-compose-ref.outputs.compose_ref }}
