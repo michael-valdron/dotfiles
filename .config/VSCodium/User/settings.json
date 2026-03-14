@@ -1,0 +1,30 @@
+{
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Monokai",
+    "redhat.telemetry.enabled": false,
+    "editor.fontSize": 15,
+    "extensions.ignoreRecommendations": true,
+    "go.toolsManagement.autoUpdate": true,
+    "nxConsole.enableTelemetry": false,
+    "openapi.approvedHostnames": [
+        "raw.githubusercontent.com"
+    ],
+    "vscode-kubernetes.minikube-path": "/bin/minikube",
+    "vscode-kubernetes.kubectl-path": "/usr/local/bin/kubectl",
+    "vscode-kubernetes.helm-path": "/bin/helm",
+    "vscode-kubernetes.kubectl-path.linux": "/usr/local/bin/kubectl",
+    "nxConsole.showNodeVersionOnStartup": false,
+    "terminal.integrated.inheritEnv": false,
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "dotnetAcquisitionExtension.existingDotnetPath": [
+        {
+            "extensionId": "AvaloniaTeam.vscode-avalonia",
+            "path": "/usr/bin/dotnet"
+        }
+    ],
+    "powershell.promptToUpdatePowerShell": false,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "window.newWindowProfile": "Default"
+}

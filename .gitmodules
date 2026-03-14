@@ -1,9 +1,6 @@
 [submodule ".scripts"]
 	path = .scripts
 	url = https://github.com/michael-valdron/scripts.git
-[submodule ".config/VSCodium/User"]
-	path = .config/VSCodium/User
-	url = https://github.com/michael-valdron/code-config.git
 [submodule ".compose"]
 	path = .compose
 	url = https://github.com/michael-valdron/compose.git
