@@ -16,6 +16,12 @@ alias clear-recent='rm ~/.local/share/recently-used.xbel'
 # if tmux colour is not working..
 # alias tmux='tmux -2'
 
+## apt ##
+alias apt-install='sh ~/.scripts/util/apt/install.sh'
+alias apt-update='sh ~/.scripts/util/apt/update.sh'
+alias apt-update-nokernel='sh ~/.scripts/util/apt/update-nokernel.sh'
+alias apt-remove='sh ~/.scripts/util/apt/remove.sh'
+
 ## dnf ##
 alias dnf-install='sh ~/.scripts/util/dnf/install.sh'
 alias dnf-update='sh ~/.scripts/util/dnf/update.sh'
