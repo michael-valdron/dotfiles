@@ -15,10 +15,10 @@ alias clear-recent='rm ~/.local/share/recently-used.xbel'
 # alias tmux='tmux -2'
 
 ## dnf ##
-alias dnf-install='sh ~/.scripts/dnf/install.sh'
-alias dnf-update='sh ~/.scripts/dnf/update.sh'
-alias dnf-update-nokernel='sh ~/.scripts/dnf/update-nokernel.sh'
-alias dnf-remove='sh ~/.scripts/dnf/remove.sh'
+alias dnf-install='sh ~/.scripts/util/dnf/install.sh'
+alias dnf-update='sh ~/.scripts/util/dnf/update.sh'
+alias dnf-update-nokernel='sh ~/.scripts/util/dnf/update-nokernel.sh'
+alias dnf-remove='sh ~/.scripts/util/dnf/remove.sh'
 
 ## flatpak ##
 alias flatpak-version='flatpak --version'
@@ -76,8 +76,8 @@ alias odrive-push='rclone sync "${PWD}" "onedrive:${1}" -v -u --checkers 1 --tra
 alias odrive-pull='rclone sync "onedrive:${1}" "${PWD}" -v -u --checkers 1 --transfers 1'
 
 ## Duplicity ##
-alias backup='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/backup.sh'
-alias restore='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/duplicity/restore.sh'
+alias backup='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/util/duplicity/backup.sh'
+alias restore='DUPLICITY_ENC_PASSWORD=$(cat ~/.passwords/backup.key) sh ~/.scripts/util/duplicity/restore.sh'
 
 ## pCloud ##
 alias pcloud='/opt/pcloud/pcloud'
@@ -116,15 +116,15 @@ alias go-tests='go test ./...'
 ## git ##
 alias git-push-all='for remote in `git remote`; do git push $remote; done'
 alias git-pull='git pull --recurse-submodules'
-alias git-download='sh ~/.scripts/git/download.sh'
+alias git-download='sh ~/.scripts/util/git/download.sh'
 
 ## yadm ##
 alias yadm-push-all='for remote in `yadm remote`; do yadm push $remote; done'
 alias yadm-pull='yadm pull --recurse-submodules'
 
 ## QEMU ##
-alias qemu-mount='sudo sh ~/.scripts/qemu/qemu-mount.sh'
-alias qemu-umount='sudo sh ~/.scripts/qemu/qemu-umount.sh'
+alias qemu-mount='sudo sh ~/.scripts/util/qemu/qemu-mount.sh'
+alias qemu-umount='sudo sh ~/.scripts/util/qemu/qemu-umount.sh'
 
 ## Podman ##
 alias podman-clean='podman rm --all --force && podman image rm --all --force && podman network rm $(podman network ls -q | grep -vE "podman")'
@@ -136,9 +136,9 @@ then
 fi
 
 ## Kubernetes ##
-alias minikube-start='sh ~/.scripts/minikube/start.sh'
+alias minikube-start='sh ~/.scripts/util/minikube/start.sh'
 alias minikube-pm-start='MINIKUBE_DRIVER=podman minikube-start'
-alias minikube-stop='sh ~/.scripts/minikube/stop.sh'
+alias minikube-stop='sh ~/.scripts/util/minikube/stop.sh'
 alias minikube-dash='minikube dashboard'
 alias install-kubectl='sh ~/.scripts/installers/packages/kubectl/install.sh'
 alias update-kubectl='sh ~/.scripts/installers/packages/kubectl/update.sh'
@@ -153,7 +153,7 @@ alias knamespace='kubectl config view --minify | grep namespace: | sed "s/namesp
 alias knamespaces='kubectl get namespace'
 alias knamespaceadd='kubectl create namespace'
 alias kchnamespace='kubectl config set-context --current --namespace'
-alias klogs='sh ~/.scripts/kubectl/logs.sh'
+alias klogs='sh ~/.scripts/util/kubectl/logs.sh'
 
 ## OpenShift Console CLI (oc) ##
 alias oversion='oc version'
@@ -162,17 +162,17 @@ alias oconfigmaps='oc get configmap'
 alias opods='oc get pods'
 alias oservices='oc get service'
 alias oroutes='oc get route'
-alias onamespace='sh ~/.scripts/oc/project.sh'
+alias onamespace='sh ~/.scripts/util/oc/project.sh'
 alias onamespaces='oc projects'
 alias onamespaceadd='oc create namespace'
-alias ochnamespace='sh ~/.scripts/oc/project.sh --change'
+alias ochnamespace='sh ~/.scripts/util/oc/project.sh --change'
 
 ## OpenShift Installer (openshift-install) ##
 alias oinstall-version='openshift-install version'
-alias oinstall-create-cluster='sh ~/.scripts/openshift-install/create.sh cluster'
-alias oinstall-destroy-cluster='sh ~/.scripts/openshift-install/destroy.sh cluster'
-alias oinstall-create-install-config='sh ~/.scripts/openshift-install/create.sh install-config'
-alias oinstall-config-edit='sh ~/.scripts/openshift-install/config_edit.sh'
+alias oinstall-create-cluster='sh ~/.scripts/util/openshift-install/create.sh cluster'
+alias oinstall-destroy-cluster='sh ~/.scripts/util/openshift-install/destroy.sh cluster'
+alias oinstall-create-install-config='sh ~/.scripts/util/openshift-install/create.sh install-config'
+alias oinstall-config-edit='sh ~/.scripts/util/openshift-install/config_edit.sh'
 
 ## Che ##
 alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
@@ -180,8 +180,8 @@ alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
 alias remove-chectl='sh ~/.scripts/installers/packages/chectl/remove.sh'
 alias minikube-chestart='minikube start --cpus=4 --memory=10240 --addons=dashboard --vm=true --disk-size=50GB --kubernetes-version=v1.23.9 --addons=dashboard,ingress'
 alias minikube-pm-chestart='minikube-chestart --driver=podman'
-alias chestart='sh ~/.scripts/chectl/start.sh'
-alias chestop='sh ~/.scripts/chectl/stop.sh'
+alias chestart='sh ~/.scripts/util/chectl/start.sh'
+alias chestop='sh ~/.scripts/util/chectl/stop.sh'
 alias chestatus='chectl server:status'
 
 ## yq ##
