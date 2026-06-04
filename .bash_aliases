@@ -218,3 +218,8 @@ alias remove-sbt='sdk uninstall sbt'
 
 ## renovate ##
 alias run-renovate='RENOVATE_USE_CONTAINER=true bash ~/.scripts/util/renovate/run.sh'
+
+## llm ##
+alias skills-sync='sh ~/.scripts/util/llm/skills/sync.sh'
+alias skills-sync-cursor='skills-sync .cursor/skills'
+alias skills-sync-cursor-user='skills-sync ~/.cursor/skills'

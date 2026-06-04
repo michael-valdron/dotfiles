@@ -213,3 +213,8 @@ alias remove-maven='sdk uninstall maven'
 ## sbt ##
 alias install-sbt='sdk install sbt'
 alias remove-sbt='sdk uninstall sbt'
+
+## llm ##
+alias skills-sync='sh ~/.scripts/util/llm/skills/sync.sh'
+alias skills-sync-cursor='skills-sync .cursor/skills'
+alias skills-sync-cursor-user='skills-sync ~/.cursor/skills'
