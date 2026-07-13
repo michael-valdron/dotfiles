@@ -104,7 +104,7 @@ alias ssh-config='${EDITOR} ~/.ssh/config'
 alias gce='gcloud compute'
 
 ## DevContainers ##
-alias dev-shell='podman-compose run --rm dev'
+alias dev-shell='${CONTAINER_ENGINE} compose run --rm dev'
 alias dev-node='dev-shell node'
 alias dev-npm='dev-shell npm'
 alias dev-npx='dev-shell npx'
@@ -164,7 +164,7 @@ fi
 
 ## Kubernetes ##
 alias minikube-start='sh ~/.scripts/util/minikube/start.sh'
-alias minikube-pm-start='MINIKUBE_DRIVER=podman minikube-start'
+alias minikube-pm-start='MINIKUBE_DRIVER=${CONTAINER_ENGINE} minikube-start'
 alias minikube-stop='sh ~/.scripts/util/minikube/stop.sh'
 alias minikube-dash='minikube dashboard'
 alias install-kubectl='sh ~/.scripts/installers/packages/kubectl/install.sh'
@@ -206,7 +206,7 @@ alias install-chectl='sh ~/.scripts/installers/packages/chectl/install.sh'
 alias update-chectl='chectl update --channel="${CHECTL_CHANNEL:-stable}"'
 alias remove-chectl='sh ~/.scripts/installers/packages/chectl/remove.sh'
 alias minikube-chestart='minikube start --cpus=4 --memory=10240 --vm=true --disk-size=50GB --kubernetes-version=v1.23.9 --addons=dashboard,ingress'
-alias minikube-pm-chestart='minikube-chestart --driver=podman'
+alias minikube-pm-chestart='minikube-chestart --driver=${CONTAINER_ENGINE}'
 alias chestart='sh ~/.scripts/util/chectl/start.sh'
 alias chestop='sh ~/.scripts/util/chectl/stop.sh'
 alias chestatus='chectl server:status'
