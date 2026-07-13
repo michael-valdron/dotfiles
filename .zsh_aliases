@@ -119,6 +119,23 @@ alias go-tidy='go mod tidy'
 alias go-vendor='go mod vendor'
 alias go-tests='go test ./...'
 
+## Node.js ##
+alias node='${CONTAINER_ENGINE} compose run --rm node node'
+alias node-24='${CONTAINER_ENGINE} compose run --rm node-24 node'
+alias node-22='${CONTAINER_ENGINE} compose run --rm node-22 node'
+alias node-sh='${CONTAINER_ENGINE} compose run --rm node sh'
+alias node-24-sh='${CONTAINER_ENGINE} compose run --rm node-24 sh'
+alias node-22-sh='${CONTAINER_ENGINE} compose run --rm node-22 sh'
+alias node-yarn='${CONTAINER_ENGINE} compose run --rm node yarn'
+alias node-24-yarn='${CONTAINER_ENGINE} compose run --rm node-24 yarn'
+alias node-22-yarn='${CONTAINER_ENGINE} compose run --rm node-22 yarn'
+alias node-npx='${CONTAINER_ENGINE} compose run --rm node npx'
+alias node-24-npx='${CONTAINER_ENGINE} compose run --rm node-24 npx'
+alias node-22-npx='${CONTAINER_ENGINE} compose run --rm node-22 npx'
+alias node-tsc='${CONTAINER_ENGINE} compose run --rm node tsc'
+alias node-24-tsc='${CONTAINER_ENGINE} compose run --rm node-24 tsc'
+alias node-22-tsc='${CONTAINER_ENGINE} compose run --rm node-22 tsc'
+
 ## git ##
 alias git-push-all='for remote in `git remote`; do git push $remote; done'
 alias git-pull='git pull --recurse-submodules'
