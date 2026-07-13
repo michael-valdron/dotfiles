@@ -149,6 +149,17 @@ alias yadm-push-all='for remote in `yadm remote`; do yadm push $remote; done'
 alias yadm-pull='yadm pull --recurse-submodules'
 alias yadm-rebase='bash ~/.scripts/util/git/rebase.sh --yadm'
 
+## Ansible ##
+alias ansible='${CONTAINER_ENGINE} compose run --rm ansible ansible'
+alias ansible-config='${CONTAINER_ENGINE} compose run --rm ansible ansible-config'
+alias ansible-console='${CONTAINER_ENGINE} compose run --rm ansible ansible-console'
+alias ansible-doc='${CONTAINER_ENGINE} compose run --rm ansible ansible-doc'
+alias ansible-galaxy='${CONTAINER_ENGINE} compose run --rm ansible ansible-galaxy'
+alias ansible-inventory='${CONTAINER_ENGINE} compose run --rm ansible ansible-inventory'
+alias ansible-playbook='${CONTAINER_ENGINE} compose run --rm ansible ansible-playbook'
+alias ansible-pull='${CONTAINER_ENGINE} compose run --rm ansible ansible-pull'
+alias ansible-vault='${CONTAINER_ENGINE} compose run --rm ansible ansible-vault'
+
 ## QEMU ##
 alias qemu-mount='sudo sh ~/.scripts/util/qemu/qemu-mount.sh'
 alias qemu-umount='sudo sh ~/.scripts/util/qemu/qemu-umount.sh'
