@@ -248,3 +248,13 @@ alias remove-sbt='sdk uninstall sbt'
 alias skills-sync='sh ~/.scripts/util/llm/skills/sync.sh'
 alias skills-sync-cursor='skills-sync .cursor/skills'
 alias skills-sync-cursor-user='skills-sync ~/.cursor/skills'
+
+## services (compose) ##
+alias services-version="yadm submodule status ~/.compose | awk -F'[()]' '{print \$2}'"
+alias services-version-set='git -C ~/.compose fetch --all && git -C ~/.compose checkout'
+alias services-version-reset='yadm submodule update ~/.compose'
+alias services-pull='${CONTAINER_ENGINE} compose -f ~/.compose/compose.yml pull'
+alias services-up='${CONTAINER_ENGINE} compose -f ~/.compose/compose.yml up -d'
+alias services-down='${CONTAINER_ENGINE} compose -f ~/.compose/compose.yml down'
+alias services-destory='${CONTAINER_ENGINE} compose -f ~/.compose/compose.yml down -v'
+alias services-ps='${CONTAINER_ENGINE} compose -f ~/.compose/compose.yml ps'
