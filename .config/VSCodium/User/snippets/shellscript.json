@@ -1,0 +1,67 @@
+{
+	// Place your snippets for shellscript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+
+	// --- Argument Parsing (Expanded) ---
+	"argsf": {
+		"prefix": "argsf",
+		"body": "POSITIONAL_ARGS=()\n\n# parse arguments\nwhile [[ $# -gt 0 ]]; do\n\tcase \"\\$1\" in\n\t\t--flag|-f)\n\t\t\tshift 1\n\t\t;;\n\t\t-*|--*)\n\t\t\techo \"unknown flag arg \\$1\" >&2\n\t\t\texit 1\n\t\t;;\n\t\t*)\n\t\t\tPOSITIONAL_ARGS+=(\"\\$1\")\n\t\t\tshift 1\n\t\t;;\n\tesac\ndone\n\nset -- \"\\${POSITIONAL_ARGS[@]}\" # restore parameters",
+		"description": "Adds flag argument parsing."
+	},
+	"import": {
+		"prefix": [
+			"import",
+			"im"
+		],
+		"body": ". ${1:path/to/helper}",
+		"description": "Import line to include definitions in helper scripts"
+	},
+	"usage": {
+		"prefix": "usage",
+		"body": "usage() {\n\techo \"${1:Title} - \\$0\"\n\techo \"\"\n\techo \"${2:Description}\"\n\techo \"\"\n\techo \"commands:\"\n\techo \"  ${3:command} - ${4:command description}\"\n\techo \"\"\n\techo \"flags:\"\n\techo \"  --help | -h - Show usage help\"\n\techo \"  ${5:--flag} | ${6:-f} - ${7:flag description}\"\n\techo \"\"\n\techo \"usage:\"\n\techo \"  \\$0 ${3:command} ${8:[flags] <packages>..}\"\n}\n",
+		"description": "Script usage function"
+	},
+	//  --- File and Directory Operations ---
+	"pushpopd": {
+		"prefix": "pushpopd",
+		"body": "pushd \"${1:/dir/path}\" 1>/dev/null || exit 1\n\t${2:body}\npopd 1>/dev/null || exit 1\n",
+		"description": "pushd/popd block"
+	},
+	// --- Control Flow ---
+	"foreach": {
+		"prefix": "foreach",
+		"body": "for ${1:i} in \"\\${$2}\"; do\n\t$3\ndone",
+		"description": "For each loop block"
+	},
+	"foreacha": {
+		"prefix": "foreacha",
+		"body": "for ${1:i} in \"\\${$2[@]}\"; do\n\t$3\ndone",
+		"description": "For each (array) loop block"
+	},
+	// --- String Manipulation ---
+	"sedreplace": {
+		"prefix": [
+			"sedreplace",
+			"sedr",
+			"str_replace"
+		],
+		"body": "sed 's/${1:search}/${2:replace}/g' \"${3:file}\"",
+		"description": "Replace string in a file."
+	},
+	"sedtrim": {
+		"prefix": [
+			"sedtrim",
+			"sedt",
+			"str_trim"
+		],
+		"body": "sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \"${1:file}\"",
+		"description": "Trim leading and trailing whitespace from lines in a file."
+	},
+	"strsplit": {
+		"prefix": "strsplit",
+		"body": "echo \"${1:string}\" | tr ' ' '\n'",
+		"description": "Split a string into lines (using space as delimiter)."
+	}
+}
